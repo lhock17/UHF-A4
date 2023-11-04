@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.0.88
 # min_api: 22
-# pg_map_id: d6cd127
+# pg_map_id: 0943cfe
 # common_typos_disable
 android.support.v4.media.MediaBrowserCompat$CustomActionCallback -> android.support.v4.media.a:
     void onError(java.lang.String,android.os.Bundle,android.os.Bundle) -> a
@@ -8957,25 +8957,24 @@ com.example.uhf.activity.BaseTabFragmentActivity -> com.example.uhf.activity.a:
     java.util.List lstTitles -> w
     com.rscja.deviceapi.RFIDWithUHFA8 mReader -> r
     com.example.uhf.adapter.ViewPagerAdapter mViewPagerAdapter -> z
-    float div(float,float,int) -> A
-    void exportData() -> B
-    java.lang.CharSequence getTabTitle(int) -> C
-    void getUHFTemperature() -> D
-    void getUHFVersion() -> E
-    void initTabs() -> F
-    void initUHF() -> G
-    void initViewPager() -> H
-    void onTabReselected(android.app.ActionBar$Tab) -> I
-    void onTabSelected(android.app.ActionBar$Tab) -> J
-    void scheduleExportData() -> K
-    void sleepTime(long) -> L
-    void toastMessage(java.lang.String) -> M
-    java.lang.String GetTimesyyyymmddhhmmss() -> u
-    void access$000(com.example.uhf.activity.BaseTabFragmentActivity) -> v
-    void access$100(com.example.uhf.activity.BaseTabFragmentActivity) -> w
-    float access$200(com.example.uhf.activity.BaseTabFragmentActivity,float,float,int) -> x
-    void access$300(com.example.uhf.activity.BaseTabFragmentActivity,long) -> y
-    void addTab(int) -> z
+    void exportData() -> A
+    java.lang.CharSequence getTabTitle(int) -> B
+    void getUHFTemperature() -> C
+    void getUHFVersion() -> D
+    void initTabs() -> E
+    void initUHF() -> F
+    void initViewPager() -> G
+    void onTabReselected(android.app.ActionBar$Tab) -> H
+    void onTabSelected(android.app.ActionBar$Tab) -> I
+    void scheduleExportData() -> J
+    void sleepTime(long) -> K
+    void toastMessage(java.lang.String) -> L
+    void access$000(com.example.uhf.activity.BaseTabFragmentActivity) -> u
+    void access$100(com.example.uhf.activity.BaseTabFragmentActivity) -> v
+    float access$200(com.example.uhf.activity.BaseTabFragmentActivity,float,float,int) -> w
+    void access$300(com.example.uhf.activity.BaseTabFragmentActivity,long) -> x
+    void addTab(int) -> y
+    float div(float,float,int) -> z
 com.example.uhf.activity.BaseTabFragmentActivity$1 -> com.example.uhf.activity.a$a:
     com.example.uhf.activity.BaseTabFragmentActivity this$0 -> b
 com.example.uhf.activity.BaseTabFragmentActivity$2 -> com.example.uhf.activity.a$b:
@@ -9000,13 +8999,13 @@ com.example.uhf.activity.BaseTabFragmentActivity$InitTask -> com.example.uhf.act
     void onPostExecute(java.lang.Boolean) -> b
 com.example.uhf.activity.UHFMainActivity -> com.example.uhf.activity.UHFMainActivity:
     boolean isBuzzer -> B
-    void checkReadWritePermission() -> N
-    void free() -> O
-    void initViewPageData2() -> P
-    void led() -> Q
-    void playSound() -> R
-    void playSound(int) -> S
-    boolean vailHexInput(java.lang.String) -> T
+    void checkReadWritePermission() -> M
+    void free() -> N
+    void initViewPageData2() -> O
+    void led() -> P
+    void playSound() -> Q
+    void playSound(int) -> R
+    boolean vailHexInput(java.lang.String) -> S
 com.example.uhf.activity.UsbDeviceCallback -> com.example.uhf.activity.b:
     void onUsbDeviceConnected(java.lang.String) -> a
     void onUsbDeviceDisconnected(java.lang.String) -> b
@@ -9131,6 +9130,7 @@ com.example.uhf.fragment.UHFReadFragment$2 -> c.b.a.b.e$b:
 com.example.uhf.fragment.UHFReadTagFragment -> c.b.a.b.f:
     android.widget.EditText etTime -> j0
     android.widget.RadioGroup RgInventory -> g0
+    java.lang.String TAG -> A0
     java.util.HashMap map -> n0
     java.util.List tempDatas -> r0
     android.view.ViewGroup layout_filter -> p0
@@ -9141,18 +9141,18 @@ com.example.uhf.fragment.UHFReadTagFragment -> c.b.a.b.f:
     android.widget.CheckBox cbFilter -> o0
     java.util.concurrent.ExecutorService executorService -> t0
     android.widget.Button BtInventory -> k0
+    android.os.Handler handler -> y0
     android.widget.SimpleAdapter adapter -> b0
     android.widget.Button btnSetFilter -> s0
     com.example.uhf.activity.UHFMainActivity mContext -> m0
-    android.os.Handler handler -> x0
-    java.lang.String TAG -> z0
     android.widget.RadioButton RbInventoryLoop -> i0
     boolean isStop -> u0
     android.widget.RadioButton RbInventorySingle -> h0
-    long mStartTime -> y0
     boolean mute -> w0
+    long mStartTime -> z0
     int totalNum -> q0
     boolean loopFlag -> Y
+    int tagWait -> x0
     android.widget.TextView tv_time -> f0
     android.widget.TextView tv_totalNum -> e0
     android.widget.ListView LvTags -> l0
@@ -9419,7 +9419,7 @@ com.example.uhf.tools.ExcelUtils -> c.b.a.c.a:
     java.io.File excelFile -> b
     jxl.write.WritableWorkbook wwb -> a
     void createExcel(java.io.File,java.lang.String[]) -> a
-    void writeToExcel(java.util.List) -> b
+    void writeToCSV(java.util.List) -> b
 com.example.uhf.tools.NumberTool -> c.b.a.c.b:
     double getPointDouble(int,double) -> a
 com.example.uhf.tools.StringUtils -> c.b.a.c.c:

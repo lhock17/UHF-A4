@@ -162,14 +162,19 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
 //            writeToFile(act.toString(), mContxt);
 
-            pathRoot = String.valueOf(getExternalStorageDirectory());
+            pathRoot = String.valueOf(getExternalStorageDirectory()) + File.separator + "out";
             USBpath usbpath = new USBpath(mContxt);
             if(usbpath.getPath() != null){
                 File rootDir = new File(usbpath.getPath());
-                pathRoot = rootDir.getPath();
+                pathRoot = rootDir.getPath() + File.separator + "out";
             }
+
+            File directory = new File(pathRoot);
+            directory.mkdirs();
+
 //            path = pathRoot + File.separator + GetTimesyyyymmddhhmmss() + ".xls";
-            path = pathRoot + File.separator + "activity" + GetTimesyyyymmddhhmmss() + ".xls";
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+            path = pathRoot + File.separator + "activity" + sdf.format(new Date()) + ".csv";
             File file = new File(pathRoot);
             if (!file.exists()) {
                 file.mkdirs();
@@ -230,8 +235,10 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
             long begin = System.currentTimeMillis();
             publishProgress(101);
-            excelUtils.writeToExcel(list);
+//            excelUtils.writeToExcel(list);
+            excelUtils.writeToCSV(list);
             notifySystemToScan(file);
+            uhfReadTagFragment.tagList.clear();
             long waitTime = 6000 - (System.currentTimeMillis() - begin);
             sleepTime(waitTime);
             return true;
@@ -420,7 +427,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     }
 
     public String GetTimesyyyymmddhhmmss() {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
         String dt = formatter.format(curDate);
         return dt;

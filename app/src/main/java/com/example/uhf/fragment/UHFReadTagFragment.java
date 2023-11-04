@@ -75,9 +75,10 @@ public class UHFReadTagFragment extends KeyDownFragment {
 
     private Button btnSetFilter;
     ExecutorService executorService=null;
-    boolean isStop=false;
+    public boolean isStop=false;
     private HashMap<String, Long> lastScans = new HashMap<>();
     public boolean mute = false;
+    public int tagWait = 5 * 1000; // 5 seconds
 
     private Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
@@ -278,11 +279,11 @@ public class UHFReadTagFragment extends KeyDownFragment {
         if (StringUtils.isNotEmpty(Epc)) {
 
             if (!lastScans.containsKey(Epc)) {
-                lastScans.put(Epc, System.currentTimeMillis());
+                lastScans.put(Epc, System.currentTimeMillis() - tagWait);
             }
-            if (System.currentTimeMillis() - lastScans.get(Epc) > 5000) {
+            if (System.currentTimeMillis() - lastScans.get(Epc) > tagWait) {
                 lastScans.put(Epc, System.currentTimeMillis());
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
                 String dt = formatter.format(curDate);
 

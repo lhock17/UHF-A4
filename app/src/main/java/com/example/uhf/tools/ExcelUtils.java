@@ -2,6 +2,7 @@ package com.example.uhf.tools;
 
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.List;
 
 import jxl.Workbook;
@@ -88,6 +89,25 @@ public class ExcelUtils {
             // 从内存中写入文件中,只能刷一次.
             wwb.write();
             wwb.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeToCSV(List<String[]> listData) {
+        if (listData == null || listData.size() == 0)
+            return;
+
+        try {
+            FileWriter fw = new FileWriter(excelFile);
+            for (String[] row : listData) {
+                for (String item : row) {
+                    fw.write(item);
+                    fw.write(",");
+                }
+                fw.write("\n");
+            }
+            fw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

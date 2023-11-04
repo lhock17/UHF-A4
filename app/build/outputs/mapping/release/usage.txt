@@ -3333,6 +3333,7 @@ com.rscja.team.qcom.deviceapi.C:
     private static com.rscja.team.qcom.deviceapi.C o
 com.example.uhf.tools.ExcelUtils:
     public void writeToExcel(java.lang.String[])
+    public void writeToExcel(java.util.List)
 androidx.localbroadcastmanager.R
 com.google.android.material.R$integer:
     private void <init>()
@@ -4401,6 +4402,7 @@ androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityAction
     private static final java.lang.String TAG
 com.google.android.material.datepicker.SingleDateSelector$1
 com.example.uhf.activity.BaseTabFragmentActivity:
+    public java.lang.String GetTimesyyyymmddhhmmss()
     private static final java.lang.String TAG
     private static final long EXPORT_DATA_INTERVAL
 androidx.core.content.pm.PermissionInfoCompat$Protection
