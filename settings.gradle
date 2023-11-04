@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='uhf-a8-demo'

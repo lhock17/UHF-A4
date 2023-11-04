@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources translatable="false">
+    <string-array name="country_codes" translatable="false">
+        <item>-</item>
+        <item>AR</item>
+        <item>AU</item>
+        <item>BR</item>
+        <item>BG</item>
+        <item>CA</item>
+        <item>CN</item>
+        <item>CZ</item>
+        <item>DE</item>
+        <item>DK</item>
+        <item>ES</item>
+        <item>FI</item>
+        <item>FR</item>
+        <item>GB</item>
+        <item>GR</item>
+        <item>HU</item>
+        <item>ID</item>
+        <item>IT</item>
+        <item>JP</item>
+        <item>KR</item>
+        <item>NL</item>
+        <item>PL</item>
+        <item>PT</item>
+        <item>RU</item>
+        <item>SE</item>
+        <item>SK</item>
+        <item>SI</item>
+        <item>TR</item>
+        <item>TW</item>
+        <item>US</item>
+    </string-array>
+
+    <string name="China_Standard_plus">中国标准增强模式(920~925MHz)</string>
+    <string name="ETSI_Standard">ETSI标准(865~868MHz)</string>
+    <string name="United_States_Standard">美国标准(902~928MHz)</string>
+    <string name="Fixed_Frequency_915MHz">定频模式(915MHz)</string>
+    <string name="Korea">韩国标准</string>
+    <string name="Japan">日本标准</string>
+    <string name="Morocco">摩洛哥标准</string>
+    <string name="China_Standard_840_845MHz">中国标准(840~845MHz)</string>
+    <string name="China_Standard_920_925MHz">中国标准(920~925MHz)</string>
+    <string name="South_Africa_915_919MHz">南非</string>
+    <string name="New_Zealand">中国台湾</string>
+
+    <string-array name="arrayMode">
+        <item>@string/China_Standard_920_925MHz</item>
+        <item>@string/China_Standard_840_845MHz</item>
+        <item>@string/ETSI_Standard</item>
+        <!--<item>@string/Fixed_Frequency_915MHz</item>-->
+        <item>@string/United_States_Standard</item>
+        <item>@string/South_Africa_915_919MHz</item>
+        <item>@string/New_Zealand</item>
+    </string-array>
+
+    <string-array name="arrayModeEx">
+        <item>@string/ETSI_Standard</item>
+    </string-array>
+</resources>

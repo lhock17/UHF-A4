@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "com.example.uhf",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "PROCESSED_RES"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 4,
+        "versionName": "1.6.8",
+        "outputFile": "UHF-A4_v1.6.8.apk",
+        "fullName": "release",
+        "baseName": "release",
+        "dirName": ""
+      },
+      "path": "resources-release.ap_",
+      "properties": {
+        "packageId": "com.example.uhf",
+        "split": "",
+        "minSdkVersion": "22"
+      }
+    }
+  ]
+}

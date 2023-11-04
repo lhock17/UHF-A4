@@ -1,0 +1,366 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.uhf.fragment.BlockPermalockFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+         <TextView
+         android:background="#AAAAAA"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/uhf_title_filter" />
+         <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/rectangle_bg"
+         android:orientation="vertical">
+         <CheckBox
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/cb_filter_2"
+             android:text="@string/button_enable"
+             android:textSize="19sp"
+             android:textColor="@drawable/check_text_color"
+             />
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/tvPtr" />
+
+             <EditText
+                 android:id="@+id/etPtr_filter_perm"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:inputType="number"
+                 android:text="32" />
+             <TextView
+                 android:layout_marginRight="30dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="(bit)" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="长度:" />
+
+             <EditText
+                 android:id="@+id/etLen_filter_perm"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:inputType="numberSigned"
+                 android:text="0" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="(bit)" />
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             >
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/tvData_Read" />
+
+             <EditText
+                 android:id="@+id/etData_filter_perm"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:hint=""
+                 android:inputType="textNoSuggestions"
+                 android:singleLine="true" />
+         </LinearLayout>
+
+         <RadioGroup
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+
+             android:orientation="horizontal">
+
+             <RadioButton
+                 android:id="@+id/rbEPC_filter_perm"
+                 android:layout_width="0dp"
+                 android:layout_height="30dp"
+                 android:layout_weight="1"
+                 android:background="@drawable/rb_bg"
+                 android:button="@null"
+                 android:checked="true"
+                 android:gravity="center"
+                 android:text="EPC"
+                 android:textColor="@drawable/check_text_color" />
+
+             <RadioButton
+                 android:id="@+id/rbTID_filter_perm"
+                 android:layout_width="0dp"
+                 android:layout_height="30dp"
+                 android:layout_marginLeft="10dp"
+                 android:layout_weight="1"
+                 android:background="@drawable/rb_bg"
+                 android:button="@null"
+                 android:checked="false"
+                 android:gravity="center"
+                 android:text="TID"
+                 android:textColor="@drawable/check_text_color" />
+
+             <RadioButton
+                 android:id="@+id/rbUser_filter_perm"
+                 android:layout_width="0dp"
+                 android:layout_height="30dp"
+                 android:layout_marginLeft="10dp"
+                 android:layout_weight="1"
+                 android:background="@drawable/rb_bg"
+                 android:button="@null"
+                 android:checked="false"
+                 android:gravity="center"
+                 android:text="USER"
+                 android:textColor="@drawable/check_text_color" />
+
+         </RadioGroup>
+
+
+     </LinearLayout>
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/tvBank"
+                 android:textSize="16sp" />
+
+             <Spinner
+                 android:id="@+id/SpinnerBank"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:entries="@array/arrayBank" />
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/tvPtr"
+                 android:textSize="16sp" />
+             <EditText
+                 android:id="@+id/EtPtr"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:inputType="numberSigned"
+                 android:gravity="left"
+                 android:text="0"
+                 android:textSize="15sp"
+                 android:textColor="@color/red1" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="(16 block)   "
+                 android:textSize="16sp" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Range"
+                 android:textSize="16sp" />
+             <EditText
+                 android:id="@+id/EtRange"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:inputType="numberSigned"
+                 android:gravity="left"
+                 android:text="1"
+                 android:textSize="15sp"
+                 android:textColor="@color/red1" />
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="ReadLock:"
+                 android:textSize="16sp" />
+
+             <Spinner
+                 android:id="@+id/SpinnerReadLock"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:entries="@array/arrayReadLock" />
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/tvAccessPwd"
+                 android:textSize="16sp" />
+
+             <EditText
+                 android:id="@+id/EtAccessPwd"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:hint="00000000" />
+         </LinearLayout>
+         <LinearLayout
+             android:orientation="horizontal"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+             <CheckBox
+                 android:id="@+id/cbBlock1"
+                 android:text="block0"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock2"
+                 android:text="block1"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock3"
+                 android:text="block2"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock4"
+                 android:text="block3"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+
+         </LinearLayout>
+         <LinearLayout
+             android:orientation="horizontal"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+             <CheckBox
+                 android:id="@+id/cbBlock5"
+                 android:text="block4"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock6"
+                 android:text="block5"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock7"
+                 android:text="block6"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock8"
+                 android:text="block7"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+         <LinearLayout
+             android:orientation="horizontal"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+             <CheckBox
+                 android:id="@+id/cbBlock9"
+                 android:text="block8"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock10"
+                 android:text="block9"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock11"
+                 android:text="block10"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock12"
+                 android:text="block11"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+         <LinearLayout
+             android:orientation="horizontal"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+             <CheckBox
+                 android:id="@+id/cbBlock13"
+                 android:text="block12"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock14"
+                 android:text="block13"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock15"
+                 android:text="block14"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+             <CheckBox
+                 android:id="@+id/cbBlock16"
+                 android:text="block15"
+                 android:layout_weight="1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+
+           <LinearLayout
+               android:visibility="gone"
+               android:orientation="horizontal"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="maskbuf:"/>
+               <TextView
+                   android:id="@+id/maskbuf"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+           </LinearLayout>
+
+           <Button
+             android:id="@+id/btnOK"
+             android:text="@string/btEnter"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+     </LinearLayout>
+    </ScrollView>
+</FrameLayout>
