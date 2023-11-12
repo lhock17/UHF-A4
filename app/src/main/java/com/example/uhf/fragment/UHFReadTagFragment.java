@@ -77,7 +77,7 @@ public class UHFReadTagFragment extends KeyDownFragment {
     ExecutorService executorService=null;
     public boolean isStop=false;
     private HashMap<String, Long> lastScans = new HashMap<>();
-    public boolean mute = false;
+    public boolean mute = true;
     public int tagWait = 5 * 1000; // 5 seconds
 
     private Handler handler = new Handler(Looper.getMainLooper()) {

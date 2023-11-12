@@ -61,7 +61,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     public RFIDWithUHFA8 mReader;
     UHFReadTagFragment uhfReadTagFragment = null;
     private Handler exportDataHandler;
-    private static final long EXPORT_DATA_INTERVAL = 10 * 60 * 1000; // (10 minutes)
+    private static final long EXPORT_DATA_INTERVAL = 1 * 30 * 1000; // (10 minutes)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,7 +195,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
         protected Boolean doInBackground(String... params) {
             // TODO Auto-generated method stub
             File file = new File(path);
-            String[] h = new String[]{"TIME", "ID"};
+            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI"};
             ExcelUtils excelUtils = new ExcelUtils();
             excelUtils.createExcel(file, h);
 
@@ -207,13 +207,11 @@ public class BaseTabFragmentActivity extends FragmentActivity {
                 HashMap<String, String> hashMap = uhfReadTagFragment.tagList.get(i);
 
 
-                String[] data = new String[2];
-                data[1] = hashMap.get(UHFReadTagFragment.TAG_EPC);
-//                data[1] = hashMap.get(UHFReadTagFragment.TAG_TID);
-//                data[2] = hashMap.get(UHFReadTagFragment.TAG_USER);
-//                data[2] = hashMap.get(UHFReadTagFragment.TAG_COUNT);
+                String[] data = new String[4];
                 data[0] = hashMap.get(UHFReadTagFragment.TAG_TIME);
-//                data[3] = hashMap.get(UHFReadTagFragment.TAG_RSSI);
+                data[1] = hashMap.get(UHFReadTagFragment.TAG_EPC);
+                data[2] = hashMap.get(UHFReadTagFragment.TAG_ANT);
+                data[3] = hashMap.get(UHFReadTagFragment.TAG_RSSI);
                 list.add(data);
 
 

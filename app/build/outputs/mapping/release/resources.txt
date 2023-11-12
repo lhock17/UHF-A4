@@ -194,6 +194,7 @@ Referenced Strings:
   ANT7
   ANT8
   ANT9
+  ANTENNA
   ARRAY
   ATTACH
   AUTOFILTER
@@ -660,6 +661,7 @@ Referenced Strings:
   RK
   RKURA4Gpio
   ROW
+  RSSI
   RadioButton
   RatingBar
   Reading...
