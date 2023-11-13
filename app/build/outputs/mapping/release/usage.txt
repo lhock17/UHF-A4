@@ -3533,11 +3533,11 @@ androidx.drawerlayout.R
 androidx.vectordrawable.R$drawable
 androidx.core.view.DragStartHelper
 com.google.android.material.datepicker.MaterialDatePicker$1
+com.zebra.adc.decoder.BarCodeReader$PictureCallback
 com.rscja.team.qcom.f.b:
     public void a()
     public synchronized com.rscja.deviceapi.interfaces.ConnectionStatus d()
     public java.util.List a(int,int)
-com.zebra.adc.decoder.BarCodeReader$PictureCallback
 androidx.swiperefreshlayout.R
 com.lidroid.xutils.db.converter.FloatColumnConverter
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi23
@@ -4403,6 +4403,7 @@ androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityAction
 com.google.android.material.datepicker.SingleDateSelector$1
 com.example.uhf.activity.BaseTabFragmentActivity:
     public java.lang.String GetTimesyyyymmddhhmmss()
+    private android.os.Handler exportDataHandler
     private static final java.lang.String TAG
     private static final long EXPORT_DATA_INTERVAL
 androidx.core.content.pm.PermissionInfoCompat$Protection
@@ -8574,6 +8575,8 @@ androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityAction
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_MOVE_WINDOW
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_SHOW_TOOLTIP
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_HIDE_TOOLTIP
+com.example.uhf.activity.BaseTabFragmentActivity:
+    private java.lang.Runnable exportDataRunnable
 androidx.fragment.app.Fragment:
     java.lang.Runnable mPostponedDurationRunnable
 com.rscja.team.qcom.e.a.d:
@@ -8787,6 +8790,7 @@ androidx.arch.core.executor.DefaultTaskExecutor:
     private volatile android.os.Handler mMainHandler
 com.example.uhf.filebrowser.IconifiedText:
     private boolean mSelectable
+com.example.uhf.activity.BaseTabFragmentActivity$1
 com.example.uhf.view.LazyViewPager:
     private float mInitialMotionX
     private int mMinimumVelocity
@@ -8814,6 +8818,8 @@ androidx.core.view.ViewCompat:
     private static final java.util.concurrent.atomic.AtomicInteger sNextGeneratedId
     private static final int[] ACCESSIBILITY_ACTIONS_RESOURCE_IDS
     private static androidx.core.view.ViewCompat$AccessibilityPaneVisibilityManager sAccessibilityPaneVisibilityManager
+com.example.uhf.fragment.UHFReadTagFragment:
+    public int tagWait
 com.rscja.team.qcom.usb.e:
     private final int d
 androidx.appcompat.app.WindowDecorActionBar:

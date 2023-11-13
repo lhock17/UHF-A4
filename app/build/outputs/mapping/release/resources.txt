@@ -874,7 +874,6 @@ Referenced Strings:
   acosh
   action_key
   action_msg
-  activity
   add
   addFontFromAssetManager
   addFontFromBuffer
@@ -1588,7 +1587,7 @@ Referenced Strings:
   or
   orange
   ordering
-  out
+  out_session
   overshootInterpolator
   pHYs
   path
@@ -1682,6 +1681,7 @@ Referenced Strings:
   selector
   self
   send
+  session_activity
   set
   setAnt
   setAntWorkTime
@@ -3241,13 +3241,6 @@ Marking attr:subtitle:2130969138 used because its prefix matches string pool con
 Marking attr:subtitleTextAppearance:2130969139 used because its prefix matches string pool constant sub
 Marking attr:subtitleTextColor:2130969140 used because its prefix matches string pool constant sub
 Marking attr:subtitleTextStyle:2130969141 used because its prefix matches string pool constant sub
-Marking id:activity_chooser_view_content:2131296369 used because its prefix matches string pool constant activity
-Marking attr:activityChooserViewStyle:2130968610 used because its prefix matches string pool constant activity
-Marking dimen:activity_horizontal_margin:2131165263 used because its prefix matches string pool constant activity
-Marking dimen:activity_vertical_margin:2131165264 used because its prefix matches string pool constant activity
-Marking layout:activity_main:2131492892 used because its prefix matches string pool constant activity
-Marking layout:activity_uhfset:2131492893 used because its prefix matches string pool constant activity
-Marking id:activity_main:2131296370 used because its prefix matches string pool constant activity
 Marking id:shortcut:2131296695 used because its prefix matches string pool constant sh
 Marking string:share:2131755798 used because its prefix matches string pool constant sh
 Marking string:share_name:2131755799 used because its prefix matches string pool constant sh
@@ -3423,7 +3416,6 @@ Marking styleable:ViewStubCompat_android_inflatedId:-1 used because its prefix m
 Marking id:none:2131296619 used because its prefix matches string pool constant none
 Marking string:none_found:2131755655 used because its prefix matches string pool constant none
 Marking string:none_paired:2131755656 used because its prefix matches string pool constant none
-Marking id:outline:2131296626 used because its prefix matches string pool constant out
 Marking string:getQTParams_fail:2131755439 used because its prefix matches string pool constant get
 Marking string:getQTParams_succ:2131755440 used because its prefix matches string pool constant get
 Marking id:date_picker_actions:2131296487 used because its prefix matches string pool constant date
@@ -4487,7 +4479,6 @@ layout:notification_action:2131492949,
    id:action_menu_presenter:2131296361,
    id:action_mode_bar_stub:2131296363,
    id:action_mode_close_button:2131296364,
-   id:activity_chooser_view_content:2131296369,
    id:add:2131296371,
    id:alertTitle:2131296372,
    id:buttonPanel:2131296421,
@@ -5482,7 +5473,6 @@ layout:notification_action:2131492949,
    attr:actionModeStyle:2130968603,
    attr:actionOverflowButtonStyle:2130968605,
    attr:actionOverflowMenuStyle:2130968606,
-   attr:activityChooserViewStyle:2130968610,
    attr:alertDialogCenterButtons:2130968612,
    attr:alertDialogStyle:2130968613,
    attr:alertDialogTheme:2130968614,
@@ -5770,7 +5760,6 @@ layout:notification_action:2131492949,
    id:mtrl_child_content_container:2131296604,
    id:mtrl_internal_children_alpha_tag:2131296605,
    id:navigation_header_container:2131296616,
-   id:outline:2131296626,
    id:pin:2131296636,
    id:rounded:2131296673,
    id:save_non_transition_alpha:2131296674,
@@ -5951,8 +5940,6 @@ layout:notification_action:2131492949,
    layout:text_view_with_line_height_from_style:2131492978,
    layout:text_view_with_theme_line_height:2131492979,
    layout:text_view_without_line_height:2131492980,
-   dimen:activity_horizontal_margin:2131165263,
-   dimen:activity_vertical_margin:2131165264,
    dimen:list_padding:2131165340,
    dimen:network_list_address_size:2131165491,
    dimen:network_list_channel_width:2131165492,
@@ -6058,7 +6045,6 @@ layout:notification_action:2131492949,
    id:UHF_exportData:2131296308,
    id:UHF_temperature:2131296309,
    id:UHF_ver:2131296310,
-   id:activity_main:2131296370,
    id:all:2131296373,
    id:btGetAnt:2131296381,
    id:btSet:2131296383,

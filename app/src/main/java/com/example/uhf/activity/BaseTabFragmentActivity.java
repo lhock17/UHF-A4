@@ -79,23 +79,23 @@ public class BaseTabFragmentActivity extends FragmentActivity {
             Log.d(TAG, "cw.model:"+modelInfo);
         }catch (Exception e){
         }
-        exportDataHandler = new Handler();
-        scheduleExportData();
+//        exportDataHandler = new Handler();
+//        scheduleExportData();
     }
 
     // Define a Runnable task to export data
     private Runnable exportDataRunnable = new Runnable() {
         @Override
         public void run() {
-            exportData(); // Call the exportData method
-            scheduleExportData(); // Schedule the task to run again
+//            exportData(); // Call the exportData method
+//            scheduleExportData(); // Schedule the task to run again
         }
     };
 
     // Schedule the exportData task to run at regular intervals
-    private void scheduleExportData() {
-        exportDataHandler.postDelayed(exportDataRunnable, EXPORT_DATA_INTERVAL);
-    }
+//    private void scheduleExportData() {
+//        exportDataHandler.postDelayed(exportDataRunnable, EXPORT_DATA_INTERVAL);
+//    }
 
     public void initUHF() {
 
@@ -162,11 +162,11 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
 //            writeToFile(act.toString(), mContxt);
 
-            pathRoot = String.valueOf(getExternalStorageDirectory()) + File.separator + "out";
+            pathRoot = String.valueOf(getExternalStorageDirectory()) + File.separator + "out_session";
             USBpath usbpath = new USBpath(mContxt);
             if(usbpath.getPath() != null){
                 File rootDir = new File(usbpath.getPath());
-                pathRoot = rootDir.getPath() + File.separator + "out";
+                pathRoot = rootDir.getPath() + File.separator + "out_session";
             }
 
             File directory = new File(pathRoot);
@@ -174,7 +174,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
 //            path = pathRoot + File.separator + GetTimesyyyymmddhhmmss() + ".xls";
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-            path = pathRoot + File.separator + "activity" + sdf.format(new Date()) + ".csv";
+            path = pathRoot + File.separator + "session_activity" + sdf.format(new Date()) + ".csv";
             File file = new File(pathRoot);
             if (!file.exists()) {
                 file.mkdirs();
@@ -286,6 +286,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
         if (keyCode == 139 || keyCode == 280|| keyCode == 294) {
+            exportData();
             if (event.getRepeatCount() == 0) {
                 if (currentFragment != null) {
                     currentFragment.myOnKeyDwon();

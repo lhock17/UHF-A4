@@ -278,11 +278,12 @@ public class UHFReadTagFragment extends KeyDownFragment {
     private void addDataToList(String tidAndEPCUser,String Epc, String Tid, String User, String rssi, String ant) {
         if (StringUtils.isNotEmpty(Epc)) {
 
-            if (!lastScans.containsKey(Epc)) {
-                lastScans.put(Epc, System.currentTimeMillis() - tagWait);
-            }
-            if (System.currentTimeMillis() - lastScans.get(Epc) > tagWait) {
-                lastScans.put(Epc, System.currentTimeMillis());
+            String key = Epc + "_" + ant;
+            if (!lastScans.containsKey(key)) {
+//                lastScans.put(Epc, System.currentTimeMillis() - tagWait);
+//            }
+//            if (System.currentTimeMillis() - lastScans.get(Epc) > tagWait) {
+                lastScans.put(key, System.currentTimeMillis());
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
                 String dt = formatter.format(curDate);
