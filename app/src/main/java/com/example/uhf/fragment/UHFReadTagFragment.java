@@ -267,6 +267,7 @@ public class UHFReadTagFragment extends KeyDownFragment {
         super.onPause();
         // 停止识别
          stopInventory();
+         lastScans.clear();
         mContext.currentFragment=null;
     }
 
@@ -278,7 +279,9 @@ public class UHFReadTagFragment extends KeyDownFragment {
     private void addDataToList(String tidAndEPCUser,String Epc, String Tid, String User, String rssi, String ant) {
         if (StringUtils.isNotEmpty(Epc)) {
 
-            String key = Epc + "_" + ant;
+//            String key = Epc + "_" + ant;
+            String key = Epc;
+
             if (!lastScans.containsKey(key)) {
 //                lastScans.put(Epc, System.currentTimeMillis() - tagWait);
 //            }
