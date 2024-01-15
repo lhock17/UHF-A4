@@ -43,7 +43,7 @@ public class UHFMainActivity extends BaseTabFragmentActivity {
     private final static String TAG = "MainActivity";
     private FragmentTabHost mTabHost;
     private FragmentManager fm;
-    public boolean isBuzzer=true;
+    public boolean isBuzzer=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

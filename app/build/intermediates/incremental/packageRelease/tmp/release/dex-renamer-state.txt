@@ -1,4 +1,4 @@
-#Mon Nov 13 09:52:08 AEST 2023
+#Mon Jan 15 20:05:26 AEST 2024
 base.0=D\:\\Documents\\GitHub\\UHF-A4\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

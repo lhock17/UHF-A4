@@ -5851,6 +5851,7 @@
         <item>Anti(1 level)</item>
         <item>Anti(2 level)</item>
     </string-array><string name="btn_set_Ant">Set Antenna</string><string name="btn_get_Ant">Get Antenna</string><string name="uhf_title_power">Output Power：</string><string name="uhf_power_name1">Ant 1 power：</string><string name="uhf_power_name2">Ant 2 power：</string><string name="uhf_power_name3">Ant 3 power：</string><string name="uhf_power_name4">Ant 4 power：</string><string name="uhf_power_name5">Ant 5 power：</string><string name="uhf_power_name6">Ant 6 power：</string><string name="uhf_power_name7">Ant 7 power：</string><string name="uhf_power_name8">Ant 8 power：</string><string name="uhf_btn_setpower">Set Power</string><string name="uhf_btn_workwait">Set Pwm</string><string name="uhf_btn_get_workwait">Get Pwm</string><string name="uhf_btn_getpower">Get Power</string><string name="uhf_title_dbm">dBm</string><string name="uhf_title_link">RFLink：</string><string name="uhf_btn_set_link">Set Link</string><string name="uhf_btn_get_link">Get Link</string><string-array name="arrayPower" translatable="false">
+        <item>25</item>
         <item>5</item>
         <item>6</item>
         <item>7</item>
@@ -5878,6 +5879,7 @@
         <item>29</item>
         <item>30</item>
     </string-array><string-array name="arrayPower2" translatable="false">
+        <item>25</item>
         <item>5</item>
         <item>6</item>
         <item>7</item>
