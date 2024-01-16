@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -39,6 +40,7 @@ import com.example.uhf.tools.ExcelUtils;
 import com.example.uhf.tools.UIHelper;
 import com.example.uhf.view.NoScrollViewPager;
 import com.rscja.deviceapi.RFIDWithUHFA8;
+import com.rscja.deviceapi.enums.AntennaEnum;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -143,6 +145,25 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
     private void exportData() {
         if (startup) {
+            mReader.setAntennaPower(AntennaEnum.ANT1, 30);
+            SystemClock.sleep(50);
+            mReader.setAntennaPower(AntennaEnum.ANT2, 30);
+            SystemClock.sleep(50);
+            mReader.setAntennaPower(AntennaEnum.ANT3, 30);
+            SystemClock.sleep(50);
+            mReader.setAntennaPower(AntennaEnum.ANT4, 30);
+            SystemClock.sleep(50);
+//            mReader.setAntennaPower(AntennaEnum.ANT5, 30);
+//            SystemClock.sleep(50);
+            
+//            mReader.setAntennaPower(AntennaEnum.ANT6, 30);
+//            SystemClock.sleep(50);
+//            mReader.setAntennaPower(AntennaEnum.ANT7, 30);
+//            SystemClock.sleep(50);
+//            mReader.setAntennaPower(AntennaEnum.ANT8, 30);
+//            SystemClock.sleep(50);
+
+
             uhfReadTagFragment.readTag();
             startup = false;
             wait_time = EXPORT_DATA_INTERVAL;
@@ -204,8 +225,8 @@ public class BaseTabFragmentActivity extends FragmentActivity {
         protected Boolean doInBackground(String... params) {
             // TODO Auto-generated method stub
             File file = new File(path);
-//            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI"};
-            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI", "TEMP"};
+            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI"};
+//            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI", "TEMP"};
             ExcelUtils excelUtils = new ExcelUtils();
             excelUtils.createExcel(file, h);
 
@@ -222,13 +243,13 @@ public class BaseTabFragmentActivity extends FragmentActivity {
                 HashMap<String, String> hashMap = uhfReadTagFragment.tagList.get(i);
 
 
-//                String[] data = new String[4];
-                String[] data = new String[5];
+                String[] data = new String[4];
+//                String[] data = new String[5];
                 data[0] = hashMap.get(UHFReadTagFragment.TAG_TIME);
                 data[1] = hashMap.get(UHFReadTagFragment.TAG_EPC);
                 data[2] = hashMap.get(UHFReadTagFragment.TAG_ANT);
                 data[3] = hashMap.get(UHFReadTagFragment.TAG_RSSI);
-                data[4] = String.format(getString(R.string.title_about_Temperature), mReader.getTemperature());
+//                data[4] = String.valueOf(mReader.getTemperature());
                 list.add(data);
 
 
