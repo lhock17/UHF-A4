@@ -4404,7 +4404,6 @@ com.google.android.material.datepicker.SingleDateSelector$1
 com.example.uhf.activity.BaseTabFragmentActivity:
     public java.lang.String GetTimesyyyymmddhhmmss()
     private static final java.lang.String TAG
-    private static final long EXPORT_DATA_INTERVAL
 androidx.core.content.pm.PermissionInfoCompat$Protection
 androidx.legacy.coreui.R$attr
 com.lidroid.xutils.http.client.multipart.HttpMultipartMode
@@ -8814,6 +8813,8 @@ androidx.core.view.ViewCompat:
     private static final java.util.concurrent.atomic.AtomicInteger sNextGeneratedId
     private static final int[] ACCESSIBILITY_ACTIONS_RESOURCE_IDS
     private static androidx.core.view.ViewCompat$AccessibilityPaneVisibilityManager sAccessibilityPaneVisibilityManager
+com.example.uhf.fragment.UHFReadTagFragment:
+    public boolean startup
 com.rscja.team.qcom.usb.e:
     private final int d
 androidx.appcompat.app.WindowDecorActionBar:

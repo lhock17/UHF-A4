@@ -41,7 +41,8 @@ import java.util.concurrent.Executors;
 
 public class UHFReadTagFragment extends KeyDownFragment {
     private static String TAG = "UHFReadTagFragment";
-    private boolean loopFlag = false;
+    public boolean loopFlag = false;
+    public boolean startup = true;
     private int inventoryFlag = 1;
     public ArrayList<HashMap<String, String>> tagList;
     SimpleAdapter adapter;
@@ -375,7 +376,7 @@ public class UHFReadTagFragment extends KeyDownFragment {
         }
     }
 
-    private void readTag() {
+    public void readTag() {
         if (BtInventory.getText().equals(mContext.getString(R.string.btInventory)))// 识别标签
         {
             switch (inventoryFlag) {
@@ -428,8 +429,13 @@ public class UHFReadTagFragment extends KeyDownFragment {
      * 停止识别
      */
     private synchronized  void stopInventory() {
+
+//        if (startup) {
+//            isStop = false;
+//            loopFlag = true;
+//        }
         if (loopFlag && !isStop) {
-            isStop=true;
+            isStop = true;
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {

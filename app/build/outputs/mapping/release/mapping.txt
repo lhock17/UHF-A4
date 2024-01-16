@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.0.88
 # min_api: 22
-# pg_map_id: 0943cfe
+# pg_map_id: 8d98d10
 # common_typos_disable
 android.support.v4.media.MediaBrowserCompat$CustomActionCallback -> android.support.v4.media.a:
     void onError(java.lang.String,android.os.Bundle,android.os.Bundle) -> a
@@ -8946,17 +8946,20 @@ com.aqibmalik.usb_path.USBpath -> c.a.a.a:
     java.lang.String TAG -> a
     java.lang.String getPath() -> a
 com.example.uhf.activity.BaseTabFragmentActivity -> com.example.uhf.activity.a:
-    com.example.uhf.fragment.UHFReadTagFragment uhfReadTagFragment -> s
-    java.lang.Runnable exportDataRunnable -> u
+    android.app.ActionBar mActionBar -> A
+    android.os.Handler exportDataHandler -> u
     com.example.uhf.fragment.KeyDownFragment currentFragment -> q
-    android.os.Handler exportDataHandler -> t
-    java.util.List lstFrg -> v
-    com.example.uhf.view.NoScrollViewPager mViewPager -> y
-    android.app.ActionBar mActionBar -> x
-    android.app.ActionBar$TabListener mTabListener -> A
-    java.util.List lstTitles -> w
+    java.lang.Runnable exportDataRunnable -> x
+    java.util.List lstTitles -> z
+    java.util.List lstFrg -> y
     com.rscja.deviceapi.RFIDWithUHFA8 mReader -> r
-    com.example.uhf.adapter.ViewPagerAdapter mViewPagerAdapter -> z
+    com.example.uhf.view.NoScrollViewPager mViewPager -> B
+    boolean startup -> s
+    android.app.ActionBar$TabListener mTabListener -> D
+    com.example.uhf.fragment.UHFReadTagFragment uhfReadTagFragment -> t
+    long wait_time -> v
+    com.example.uhf.adapter.ViewPagerAdapter mViewPagerAdapter -> C
+    long EXPORT_DATA_INTERVAL -> w
     void exportData() -> A
     java.lang.CharSequence getTabTitle(int) -> B
     void getUHFTemperature() -> C
@@ -8998,7 +9001,7 @@ com.example.uhf.activity.BaseTabFragmentActivity$InitTask -> com.example.uhf.act
     java.lang.Boolean doInBackground(java.lang.String[]) -> a
     void onPostExecute(java.lang.Boolean) -> b
 com.example.uhf.activity.UHFMainActivity -> com.example.uhf.activity.UHFMainActivity:
-    boolean isBuzzer -> B
+    boolean isBuzzer -> E
     void checkReadWritePermission() -> M
     void free() -> N
     void initViewPageData2() -> O
@@ -9157,18 +9160,15 @@ com.example.uhf.fragment.UHFReadTagFragment -> c.b.a.b.f:
     android.widget.TextView tv_totalNum -> e0
     android.widget.ListView LvTags -> l0
     android.widget.TextView tv_count -> d0
-    void access$800(com.example.uhf.fragment.UHFReadTagFragment) -> A1
-    boolean access$900(com.example.uhf.fragment.UHFReadTagFragment) -> B1
-    boolean access$902(com.example.uhf.fragment.UHFReadTagFragment,boolean) -> C1
-    void addDataToList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> D1
-    void clearData() -> E1
-    void initFilter(android.view.View) -> F1
-    void inits(android.view.View) -> G1
-    java.lang.String mergeTidEpc(java.lang.String,java.lang.String,java.lang.String) -> H1
-    void readTag() -> I1
-    void setTotalTime() -> J1
-    void setViewEnabled(boolean) -> K1
-    void stopInventory() -> L1
+    void addDataToList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> A1
+    void clearData() -> B1
+    void initFilter(android.view.View) -> C1
+    void inits(android.view.View) -> D1
+    java.lang.String mergeTidEpc(java.lang.String,java.lang.String,java.lang.String) -> E1
+    void readTag() -> F1
+    void setTotalTime() -> G1
+    void setViewEnabled(boolean) -> H1
+    void stopInventory() -> I1
     void onActivityCreated(android.os.Bundle) -> V
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
     void setUserVisibleHint(boolean) -> n1
@@ -9176,15 +9176,15 @@ com.example.uhf.fragment.UHFReadTagFragment -> c.b.a.b.f:
     java.lang.String access$000(com.example.uhf.fragment.UHFReadTagFragment,java.lang.String,java.lang.String,java.lang.String) -> q1
     void onPause() -> r0
     void access$100(com.example.uhf.fragment.UHFReadTagFragment,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> r1
-    void access$1000(com.example.uhf.fragment.UHFReadTagFragment,boolean) -> s1
-    android.os.Handler access$1100(com.example.uhf.fragment.UHFReadTagFragment) -> t1
-    com.example.uhf.activity.UHFMainActivity access$200(com.example.uhf.fragment.UHFReadTagFragment) -> u1
-    void access$300(com.example.uhf.fragment.UHFReadTagFragment) -> v1
+    com.example.uhf.activity.UHFMainActivity access$200(com.example.uhf.fragment.UHFReadTagFragment) -> s1
+    void access$300(com.example.uhf.fragment.UHFReadTagFragment) -> t1
+    android.view.ViewGroup access$400(com.example.uhf.fragment.UHFReadTagFragment) -> u1
+    android.widget.CheckBox access$500(com.example.uhf.fragment.UHFReadTagFragment) -> v1
     void onResume() -> w0
-    android.view.ViewGroup access$400(com.example.uhf.fragment.UHFReadTagFragment) -> w1
-    android.widget.CheckBox access$500(com.example.uhf.fragment.UHFReadTagFragment) -> x1
-    void access$600(com.example.uhf.fragment.UHFReadTagFragment) -> y1
-    int access$702(com.example.uhf.fragment.UHFReadTagFragment,int) -> z1
+    void access$600(com.example.uhf.fragment.UHFReadTagFragment) -> w1
+    int access$702(com.example.uhf.fragment.UHFReadTagFragment,int) -> x1
+    void access$800(com.example.uhf.fragment.UHFReadTagFragment,boolean) -> y1
+    android.os.Handler access$900(com.example.uhf.fragment.UHFReadTagFragment) -> z1
 com.example.uhf.fragment.UHFReadTagFragment$1 -> c.b.a.b.f$a:
     com.example.uhf.fragment.UHFReadTagFragment this$0 -> a
 com.example.uhf.fragment.UHFReadTagFragment$2 -> c.b.a.b.f$b:

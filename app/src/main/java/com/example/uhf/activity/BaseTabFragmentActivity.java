@@ -59,9 +59,11 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     private static final String TAG ="a8";
     public KeyDownFragment currentFragment=null;
     public RFIDWithUHFA8 mReader;
+    private boolean startup = true;
     UHFReadTagFragment uhfReadTagFragment = null;
     private Handler exportDataHandler;
-    private static final long EXPORT_DATA_INTERVAL = 1 * 30 * 1000; // (10 minutes)
+    private long wait_time = 1000;
+    private long EXPORT_DATA_INTERVAL = 1 * 30 * 1000; // (10 minutes)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,13 +96,14 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
     // Schedule the exportData task to run at regular intervals
     private void scheduleExportData() {
-        exportDataHandler.postDelayed(exportDataRunnable, EXPORT_DATA_INTERVAL);
+        exportDataHandler.postDelayed(exportDataRunnable, wait_time);
     }
 
     public void initUHF() {
 
         try {
             mReader = RFIDWithUHFA8.getInstance();
+
         } catch (Exception ex) {
             toastMessage(ex.getMessage());
             return;
@@ -139,6 +142,12 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     }
 
     private void exportData() {
+        if (startup) {
+            uhfReadTagFragment.readTag();
+            startup = false;
+            wait_time = EXPORT_DATA_INTERVAL;
+        }
+
         if (uhfReadTagFragment.tagList != null && uhfReadTagFragment.tagList.size() > 0) {
             new ExcelTask(this).execute();
         } else {
@@ -195,9 +204,15 @@ public class BaseTabFragmentActivity extends FragmentActivity {
         protected Boolean doInBackground(String... params) {
             // TODO Auto-generated method stub
             File file = new File(path);
-            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI"};
+//            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI"};
+            String[] h = new String[]{"TIME", "ID", "ANTENNA", "RSSI", "TEMP"};
             ExcelUtils excelUtils = new ExcelUtils();
             excelUtils.createExcel(file, h);
+
+//            if (uhfReadTagFragment.startup) {
+//                uhfReadTagFragment.startup = false;
+//                uhfReadTagFragment.loopFlag = true;
+//            }
 
             List<String[]> list = new ArrayList<>();
             for (int i = 0; !isSotp && i < uhfReadTagFragment.tagList.size(); i++) {
@@ -207,11 +222,13 @@ public class BaseTabFragmentActivity extends FragmentActivity {
                 HashMap<String, String> hashMap = uhfReadTagFragment.tagList.get(i);
 
 
-                String[] data = new String[4];
+//                String[] data = new String[4];
+                String[] data = new String[5];
                 data[0] = hashMap.get(UHFReadTagFragment.TAG_TIME);
                 data[1] = hashMap.get(UHFReadTagFragment.TAG_EPC);
                 data[2] = hashMap.get(UHFReadTagFragment.TAG_ANT);
                 data[3] = hashMap.get(UHFReadTagFragment.TAG_RSSI);
+                data[4] = String.format(getString(R.string.title_about_Temperature), mReader.getTemperature());
                 list.add(data);
 
 
