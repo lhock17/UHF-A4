@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -39,6 +40,7 @@ import com.example.uhf.tools.ExcelUtils;
 import com.example.uhf.tools.UIHelper;
 import com.example.uhf.view.NoScrollViewPager;
 import com.rscja.deviceapi.RFIDWithUHFA8;
+import com.rscja.deviceapi.enums.AntennaEnum;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -61,7 +63,8 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     public RFIDWithUHFA8 mReader;
     UHFReadTagFragment uhfReadTagFragment = null;
     private Handler exportDataHandler;
-    private static final long EXPORT_DATA_INTERVAL = 1 * 30 * 1000; // (10 minutes)
+    private boolean started = false;
+    private static final long EXPORT_DATA_INTERVAL = 10 * 60 * 1000; // (10 minutes)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +142,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     }
 
     private void exportData() {
+
         if (uhfReadTagFragment.tagList != null && uhfReadTagFragment.tagList.size() > 0) {
             new ExcelTask(this).execute();
         } else {
@@ -318,6 +322,29 @@ public class BaseTabFragmentActivity extends FragmentActivity {
             if (!result) {
                 Toast.makeText(BaseTabFragmentActivity.this, "init fail",
                         Toast.LENGTH_SHORT).show();
+            } else {
+                if (!started) {
+                    mReader.setAntennaPower(AntennaEnum.ANT1, 25);
+
+                    mReader.setAntennaPower(AntennaEnum.ANT2, 25);
+                    SystemClock.sleep(50);
+                    mReader.setAntennaPower(AntennaEnum.ANT3, 25);
+                    SystemClock.sleep(50);
+                    mReader.setAntennaPower(AntennaEnum.ANT4, 25);
+                    SystemClock.sleep(50);
+//            mReader.setAntennaPower(AntennaEnum.ANT5, 30);
+//            SystemClock.sleep(50);
+
+//            mReader.setAntennaPower(AntennaEnum.ANT6, 30);
+//            SystemClock.sleep(50);
+//            mReader.setAntennaPower(AntennaEnum.ANT7, 30);
+//            SystemClock.sleep(50);
+//            mReader.setAntennaPower(AntennaEnum.ANT8, 30);
+//            SystemClock.sleep(50);
+
+                    uhfReadTagFragment.readTag();
+                    started = true;
+                }
             }
         }
 

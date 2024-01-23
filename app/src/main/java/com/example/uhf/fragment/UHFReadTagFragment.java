@@ -375,7 +375,7 @@ public class UHFReadTagFragment extends KeyDownFragment {
         }
     }
 
-    private void readTag() {
+    public void readTag() {
         if (BtInventory.getText().equals(mContext.getString(R.string.btInventory)))// 识别标签
         {
             switch (inventoryFlag) {
