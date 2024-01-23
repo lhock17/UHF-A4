@@ -65,7 +65,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     UHFReadTagFragment uhfReadTagFragment = null;
     private Handler exportDataHandler;
     private long wait_time = 1000;
-    private long EXPORT_DATA_INTERVAL = 1 * 30 * 1000; // (10 minutes)
+    private long EXPORT_DATA_INTERVAL = 10 * 60 * 1000; // (10 minutes)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,13 +145,13 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
     private void exportData() {
         if (startup) {
-            mReader.setAntennaPower(AntennaEnum.ANT1, 30);
+            mReader.setAntennaPower(AntennaEnum.ANT1, 25);
             SystemClock.sleep(50);
-            mReader.setAntennaPower(AntennaEnum.ANT2, 30);
+            mReader.setAntennaPower(AntennaEnum.ANT2, 25);
             SystemClock.sleep(50);
-            mReader.setAntennaPower(AntennaEnum.ANT3, 30);
+            mReader.setAntennaPower(AntennaEnum.ANT3, 25);
             SystemClock.sleep(50);
-            mReader.setAntennaPower(AntennaEnum.ANT4, 30);
+            mReader.setAntennaPower(AntennaEnum.ANT4, 25);
             SystemClock.sleep(50);
 //            mReader.setAntennaPower(AntennaEnum.ANT5, 30);
 //            SystemClock.sleep(50);
@@ -191,6 +191,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
             mContxt = act;
 
 //            writeToFile(act.toString(), mContxt);
+
 
             pathRoot = String.valueOf(getExternalStorageDirectory()) + File.separator + "out";
             USBpath usbpath = new USBpath(mContxt);
@@ -249,6 +250,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
                 data[1] = hashMap.get(UHFReadTagFragment.TAG_EPC);
                 data[2] = hashMap.get(UHFReadTagFragment.TAG_ANT);
                 data[3] = hashMap.get(UHFReadTagFragment.TAG_RSSI);
+//                data[4] = hashMap.get(UHFReadTagFragment.MEM_USAGE);
 //                data[4] = String.valueOf(mReader.getTemperature());
                 list.add(data);
 
@@ -275,7 +277,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
             excelUtils.writeToCSV(list);
             notifySystemToScan(file);
             uhfReadTagFragment.tagList.clear();
-            long waitTime = 6000 - (System.currentTimeMillis() - begin);
+            long waitTime = 10000 - (System.currentTimeMillis() - begin);
             sleepTime(waitTime);
             return true;
         }

@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.0.88
 # min_api: 22
-# pg_map_id: 8d98d10
+# pg_map_id: 51ca8e3
 # common_typos_disable
 android.support.v4.media.MediaBrowserCompat$CustomActionCallback -> android.support.v4.media.a:
     void onError(java.lang.String,android.os.Bundle,android.os.Bundle) -> a
@@ -8960,24 +8960,22 @@ com.example.uhf.activity.BaseTabFragmentActivity -> com.example.uhf.activity.a:
     long wait_time -> v
     com.example.uhf.adapter.ViewPagerAdapter mViewPagerAdapter -> C
     long EXPORT_DATA_INTERVAL -> w
-    void exportData() -> A
-    java.lang.CharSequence getTabTitle(int) -> B
-    void getUHFTemperature() -> C
-    void getUHFVersion() -> D
-    void initTabs() -> E
-    void initUHF() -> F
-    void initViewPager() -> G
-    void onTabReselected(android.app.ActionBar$Tab) -> H
-    void onTabSelected(android.app.ActionBar$Tab) -> I
-    void scheduleExportData() -> J
-    void sleepTime(long) -> K
-    void toastMessage(java.lang.String) -> L
+    java.lang.CharSequence getTabTitle(int) -> A
+    void getUHFTemperature() -> B
+    void getUHFVersion() -> C
+    void initTabs() -> D
+    void initUHF() -> E
+    void initViewPager() -> F
+    void onTabReselected(android.app.ActionBar$Tab) -> G
+    void onTabSelected(android.app.ActionBar$Tab) -> H
+    void scheduleExportData() -> I
+    void toastMessage(java.lang.String) -> J
     void access$000(com.example.uhf.activity.BaseTabFragmentActivity) -> u
     void access$100(com.example.uhf.activity.BaseTabFragmentActivity) -> v
     float access$200(com.example.uhf.activity.BaseTabFragmentActivity,float,float,int) -> w
-    void access$300(com.example.uhf.activity.BaseTabFragmentActivity,long) -> x
-    void addTab(int) -> y
-    float div(float,float,int) -> z
+    void addTab(int) -> x
+    float div(float,float,int) -> y
+    void exportData() -> z
 com.example.uhf.activity.BaseTabFragmentActivity$1 -> com.example.uhf.activity.a$a:
     com.example.uhf.activity.BaseTabFragmentActivity this$0 -> b
 com.example.uhf.activity.BaseTabFragmentActivity$2 -> com.example.uhf.activity.a$b:
@@ -9002,13 +9000,13 @@ com.example.uhf.activity.BaseTabFragmentActivity$InitTask -> com.example.uhf.act
     void onPostExecute(java.lang.Boolean) -> b
 com.example.uhf.activity.UHFMainActivity -> com.example.uhf.activity.UHFMainActivity:
     boolean isBuzzer -> E
-    void checkReadWritePermission() -> M
-    void free() -> N
-    void initViewPageData2() -> O
-    void led() -> P
-    void playSound() -> Q
-    void playSound(int) -> R
-    boolean vailHexInput(java.lang.String) -> S
+    void checkReadWritePermission() -> K
+    void free() -> L
+    void initViewPageData2() -> M
+    void led() -> N
+    void playSound() -> O
+    void playSound(int) -> P
+    boolean vailHexInput(java.lang.String) -> Q
 com.example.uhf.activity.UsbDeviceCallback -> com.example.uhf.activity.b:
     void onUsbDeviceConnected(java.lang.String) -> a
     void onUsbDeviceDisconnected(java.lang.String) -> b

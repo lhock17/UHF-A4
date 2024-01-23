@@ -1410,9 +1410,9 @@ androidx.recyclerview.widget.LinearSmoothScroller:
 android.support.v4.media.session.MediaSessionCompat$MediaSessionImpl
 androidx.core.text.util.LinkifyCompat$1
 androidx.core.net.UriCompat
+com.example.uhf.R$id
 com.google.android.material.R$layout:
     private void <init>()
-com.example.uhf.R$id
 android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper:
     public void <init>(android.os.ResultReceiver)
 androidx.core.util.Pools
@@ -3533,11 +3533,11 @@ androidx.drawerlayout.R
 androidx.vectordrawable.R$drawable
 androidx.core.view.DragStartHelper
 com.google.android.material.datepicker.MaterialDatePicker$1
-com.zebra.adc.decoder.BarCodeReader$PictureCallback
 com.rscja.team.qcom.f.b:
     public void a()
     public synchronized com.rscja.deviceapi.interfaces.ConnectionStatus d()
     public java.util.List a(int,int)
+com.zebra.adc.decoder.BarCodeReader$PictureCallback
 androidx.swiperefreshlayout.R
 com.lidroid.xutils.db.converter.FloatColumnConverter
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi23
@@ -4402,6 +4402,7 @@ androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityAction
     private static final java.lang.String TAG
 com.google.android.material.datepicker.SingleDateSelector$1
 com.example.uhf.activity.BaseTabFragmentActivity:
+    private void sleepTime(long)
     public java.lang.String GetTimesyyyymmddhhmmss()
     private static final java.lang.String TAG
 androidx.core.content.pm.PermissionInfoCompat$Protection
@@ -7505,6 +7506,7 @@ com.example.uhf.fragment.UHFReadTagFragment:
     public static final java.lang.String TAG_RSSI
     public static final java.lang.String TAG_ANT
     public static final java.lang.String TAG_TIME
+    public static final java.lang.String MEM_USAGE
 androidx.appcompat.widget.Toolbar$LayoutParams:
     public void <init>(int,int,int)
     public void <init>(int)

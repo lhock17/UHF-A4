@@ -1,6 +1,7 @@
 package com.example.uhf.fragment;
 
 import android.os.Bundle;
+import android.os.Debug;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -70,6 +71,7 @@ public class UHFReadTagFragment extends KeyDownFragment {
     public static final String TAG_RSSI = "tagRssi";
     public static final String TAG_ANT = "tagAnt";
     public static final String TAG_TIME = "tagTime";
+    public static final String MEM_USAGE = "memUsage";
 
     private int totalNum;
     private List<String> tempDatas;
@@ -300,6 +302,14 @@ public class UHFReadTagFragment extends KeyDownFragment {
                 //            map.put(TAG_COUNT, String.valueOf(1));
                 map.put(TAG_RSSI, rssi);
                 map.put(TAG_ANT, ant);
+
+                // Get memory usage
+//                long nativeHeapSize = Debug.getNativeHeapSize();
+//                long nativeHeapFreeSize = Debug.getNativeHeapFreeSize();
+//                long usedMemInBytes = nativeHeapSize - nativeHeapFreeSize;
+//                double usedMemInPercentage = usedMemInBytes * 100 / nativeHeapSize;
+//
+//                map.put(MEM_USAGE, String.valueOf(usedMemInPercentage));
                 //            if (index == -1) {
                 tagList.add(map);
                 tempDatas.add(IdAndEPCAndDt);
