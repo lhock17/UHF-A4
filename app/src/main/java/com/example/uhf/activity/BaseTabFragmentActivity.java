@@ -324,13 +324,13 @@ public class BaseTabFragmentActivity extends FragmentActivity {
                         Toast.LENGTH_SHORT).show();
             } else {
                 if (!started) {
-                    mReader.setAntennaPower(AntennaEnum.ANT1, 25);
+                    mReader.setAntennaPower(AntennaEnum.ANT1, 30);
 
-                    mReader.setAntennaPower(AntennaEnum.ANT2, 25);
+                    mReader.setAntennaPower(AntennaEnum.ANT2, 30);
                     SystemClock.sleep(50);
-                    mReader.setAntennaPower(AntennaEnum.ANT3, 25);
+                    mReader.setAntennaPower(AntennaEnum.ANT3, 30);
                     SystemClock.sleep(50);
-                    mReader.setAntennaPower(AntennaEnum.ANT4, 25);
+                    mReader.setAntennaPower(AntennaEnum.ANT4, 30);
                     SystemClock.sleep(50);
 //            mReader.setAntennaPower(AntennaEnum.ANT5, 30);
 //            SystemClock.sleep(50);

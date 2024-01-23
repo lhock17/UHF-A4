@@ -3533,11 +3533,11 @@ androidx.drawerlayout.R
 androidx.vectordrawable.R$drawable
 androidx.core.view.DragStartHelper
 com.google.android.material.datepicker.MaterialDatePicker$1
+com.zebra.adc.decoder.BarCodeReader$PictureCallback
 com.rscja.team.qcom.f.b:
     public void a()
     public synchronized com.rscja.deviceapi.interfaces.ConnectionStatus d()
     public java.util.List a(int,int)
-com.zebra.adc.decoder.BarCodeReader$PictureCallback
 androidx.swiperefreshlayout.R
 com.lidroid.xutils.db.converter.FloatColumnConverter
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi23
