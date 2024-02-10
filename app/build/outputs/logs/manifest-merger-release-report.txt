@@ -124,6 +124,10 @@ activity#com.example.uhf.filebrowser.FileManagerActivity
 ADDED from D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:33:10-69
 	android:name
 		ADDED from D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:33:20-67
+service#com.example.uhf.service.TcpService
+ADDED from D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:34:9-54
+	android:name
+		ADDED from D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:34:18-52
 receiver#com.example.uhf.activity.UsbReceiver
 ADDED from D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:35:9-43:20
 	android:enabled

@@ -44,6 +44,7 @@ import com.rscja.deviceapi.enums.AntennaEnum;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Method;
@@ -64,7 +65,11 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     UHFReadTagFragment uhfReadTagFragment = null;
     private Handler exportDataHandler;
     private boolean started = false;
-    private static final long EXPORT_DATA_INTERVAL = 10 * 60 * 1000; // (10 minutes)
+    private int antPower = 20;
+    private static final long EXPORT_DATA_INTERVAL = 1 * 60 * 1000; // (10 minutes)
+    private static final long TIMESTAMP_INTERVAL = 15 * 1000; // (15 seconds)
+    private static final String FILE_PATH = String.valueOf(getExternalStorageDirectory()) + "/uhf_last_running.txt";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,21 +88,43 @@ public class BaseTabFragmentActivity extends FragmentActivity {
         }catch (Exception e){
         }
         exportDataHandler = new Handler();
-        scheduleExportData();
+        try {
+            scheduleExportData();
+            scheduleTimestampJob();
+        } catch (Exception e) {
+
+        }
     }
 
     // Define a Runnable task to export data
     private Runnable exportDataRunnable = new Runnable() {
         @Override
         public void run() {
-            exportData(); // Call the exportData method
-            scheduleExportData(); // Schedule the task to run again
+            try {
+                exportData(); // Call the exportData method
+                scheduleExportData(); // Schedule the task to run again
+            } catch (Exception e) {}
+        }
+    };
+
+    private Runnable writeTimestampRunnable = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                writeTimestamp(); // Call the exportData method
+                scheduleTimestampJob(); // Schedule the task to run again
+            } catch (Exception e) {}
         }
     };
 
     // Schedule the exportData task to run at regular intervals
     private void scheduleExportData() {
         exportDataHandler.postDelayed(exportDataRunnable, EXPORT_DATA_INTERVAL);
+    }
+
+    // Schedule the timestamp writer task to run at regular intervals
+    private void scheduleTimestampJob() {
+        exportDataHandler.postDelayed(writeTimestampRunnable, TIMESTAMP_INTERVAL);
     }
 
     public void initUHF() {
@@ -142,14 +169,28 @@ public class BaseTabFragmentActivity extends FragmentActivity {
     }
 
     private void exportData() {
-
-        if (uhfReadTagFragment.tagList != null && uhfReadTagFragment.tagList.size() > 0) {
-            new ExcelTask(this).execute();
-        } else {
-            UIHelper.ToastMessage(this, R.string.export_empty_data);
-        }
-
+        try {
+            if (uhfReadTagFragment.tagList != null && uhfReadTagFragment.tagList.size() > 0) {
+                new ExcelTask(this).execute();
+            } else {
+                UIHelper.ToastMessage(this, R.string.export_empty_data);
+            }
+        } catch (Exception e) {}
     }
+
+    private void writeTimestamp() {
+        try {
+            String timestamp = String.valueOf(System.currentTimeMillis());
+
+            File file = new File(FILE_PATH);
+            FileWriter writer = new FileWriter(file);
+            writer.write(timestamp);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * 导出数据任务类
      */
@@ -162,27 +203,29 @@ public class BaseTabFragmentActivity extends FragmentActivity {
         String path;
 
         public ExcelTask(Activity act) {
-            mContxt = act;
+            try {
+                mContxt = act;
 
 //            writeToFile(act.toString(), mContxt);
 
-            pathRoot = String.valueOf(getExternalStorageDirectory()) + File.separator + "out";
-            USBpath usbpath = new USBpath(mContxt);
-            if(usbpath.getPath() != null){
-                File rootDir = new File(usbpath.getPath());
-                pathRoot = rootDir.getPath() + File.separator + "out";
-            }
+                pathRoot = String.valueOf(getExternalStorageDirectory()) + File.separator + "out";
+                USBpath usbpath = new USBpath(mContxt);
+                if (usbpath.getPath() != null) {
+                    File rootDir = new File(usbpath.getPath());
+                    pathRoot = rootDir.getPath() + File.separator + "out";
+                }
 
-            File directory = new File(pathRoot);
-            directory.mkdirs();
+                File directory = new File(pathRoot);
+                directory.mkdirs();
 
 //            path = pathRoot + File.separator + GetTimesyyyymmddhhmmss() + ".xls";
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-            path = pathRoot + File.separator + "activity" + sdf.format(new Date()) + ".csv";
-            File file = new File(pathRoot);
-            if (!file.exists()) {
-                file.mkdirs();
-            }
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+                path = pathRoot + File.separator + "activity" + sdf.format(new Date()) + ".csv";
+                File file = new File(pathRoot);
+                if (!file.exists()) {
+                    file.mkdirs();
+                }
+            } catch (Exception e) {}
         }
 
         public void notifySystemToScan(File file) {
@@ -241,7 +284,7 @@ public class BaseTabFragmentActivity extends FragmentActivity {
             excelUtils.writeToCSV(list);
             notifySystemToScan(file);
             uhfReadTagFragment.tagList.clear();
-            long waitTime = 6000 - (System.currentTimeMillis() - begin);
+            long waitTime = 20000 - (System.currentTimeMillis() - begin);
             sleepTime(waitTime);
             return true;
         }
@@ -286,19 +329,19 @@ public class BaseTabFragmentActivity extends FragmentActivity {
         }
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if (keyCode == 139 || keyCode == 280|| keyCode == 294) {
-            if (event.getRepeatCount() == 0) {
-                if (currentFragment != null) {
-                    currentFragment.myOnKeyDwon();
-                }
-            }
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//
+//        if (keyCode == 139 || keyCode == 280|| keyCode == 294) {
+//            if (event.getRepeatCount() == 0) {
+//                if (currentFragment != null) {
+//                    currentFragment.myOnKeyDwon();
+//                }
+//            }
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
 
     public void toastMessage(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
@@ -324,24 +367,18 @@ public class BaseTabFragmentActivity extends FragmentActivity {
                         Toast.LENGTH_SHORT).show();
             } else {
                 if (!started) {
-                    mReader.setAntennaPower(AntennaEnum.ANT1, 30);
 
-                    mReader.setAntennaPower(AntennaEnum.ANT2, 30);
-                    SystemClock.sleep(50);
-                    mReader.setAntennaPower(AntennaEnum.ANT3, 30);
-                    SystemClock.sleep(50);
-                    mReader.setAntennaPower(AntennaEnum.ANT4, 30);
-                    SystemClock.sleep(50);
-//            mReader.setAntennaPower(AntennaEnum.ANT5, 30);
-//            SystemClock.sleep(50);
+                    // Set antenna power
+                    mReader.setAntennaPower(AntennaEnum.ANT1, antPower);
 
-//            mReader.setAntennaPower(AntennaEnum.ANT6, 30);
-//            SystemClock.sleep(50);
-//            mReader.setAntennaPower(AntennaEnum.ANT7, 30);
-//            SystemClock.sleep(50);
-//            mReader.setAntennaPower(AntennaEnum.ANT8, 30);
-//            SystemClock.sleep(50);
+                    mReader.setAntennaPower(AntennaEnum.ANT2, antPower);
+                    SystemClock.sleep(50);
+                    mReader.setAntennaPower(AntennaEnum.ANT3, antPower);
+                    SystemClock.sleep(50);
+                    mReader.setAntennaPower(AntennaEnum.ANT4, antPower);
+                    SystemClock.sleep(50);
 
+                    // Start tag reading
                     uhfReadTagFragment.readTag();
                     started = true;
                 }

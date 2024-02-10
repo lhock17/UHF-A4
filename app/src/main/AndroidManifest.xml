@@ -31,7 +31,7 @@
             <!--</intent-filter>-->
         <!--</receiver>-->
          <activity android:name=".filebrowser.FileManagerActivity"/>
-        <!--<service android:name=".service.TcpService"/>-->
+        <service android:name=".service.TcpService"/>
         <receiver
             android:name=".activity.UsbReceiver"
             android:enabled="true"

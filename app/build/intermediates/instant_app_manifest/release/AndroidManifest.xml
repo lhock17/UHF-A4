@@ -45,7 +45,9 @@
         <!-- </intent-filter> -->
         <!-- </receiver> -->
         <activity android:name="com.example.uhf.filebrowser.FileManagerActivity" />
-        <!-- <service android:name=".service.TcpService"/> -->
+
+        <service android:name="com.example.uhf.service.TcpService" />
+
         <receiver
             android:name="com.example.uhf.activity.UsbReceiver"
             android:enabled="true"

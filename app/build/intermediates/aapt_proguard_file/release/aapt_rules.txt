@@ -2,6 +2,7 @@
 -keep class com.example.uhf.activity.UHFMainActivity { <init>(); }
 -keep class com.example.uhf.activity.UsbReceiver { <init>(); }
 -keep class com.example.uhf.filebrowser.FileManagerActivity { <init>(); }
+-keep class com.example.uhf.service.TcpService { <init>(); }
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(android.content.Context, android.util.AttributeSet); }

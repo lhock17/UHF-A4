@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.0.88
 # min_api: 22
-# pg_map_id: 12b0e74
+# pg_map_id: cf40f50
 # common_typos_disable
 android.support.v4.media.MediaBrowserCompat$CustomActionCallback -> android.support.v4.media.a:
     void onError(java.lang.String,android.os.Bundle,android.os.Bundle) -> a
@@ -8946,43 +8946,53 @@ com.aqibmalik.usb_path.USBpath -> c.a.a.a:
     java.lang.String TAG -> a
     java.lang.String getPath() -> a
 com.example.uhf.activity.BaseTabFragmentActivity -> com.example.uhf.activity.a:
-    com.example.uhf.fragment.UHFReadTagFragment uhfReadTagFragment -> s
+    android.app.ActionBar mActionBar -> A
     com.example.uhf.fragment.KeyDownFragment currentFragment -> q
     android.os.Handler exportDataHandler -> t
-    com.example.uhf.adapter.ViewPagerAdapter mViewPagerAdapter -> A
-    java.lang.Runnable exportDataRunnable -> v
-    com.example.uhf.view.NoScrollViewPager mViewPager -> z
+    java.lang.Runnable writeTimestampRunnable -> x
+    java.lang.Runnable exportDataRunnable -> w
     boolean started -> u
-    android.app.ActionBar mActionBar -> y
-    android.app.ActionBar$TabListener mTabListener -> B
-    java.util.List lstTitles -> x
-    java.util.List lstFrg -> w
+    java.util.List lstTitles -> z
+    java.util.List lstFrg -> y
     com.rscja.deviceapi.RFIDWithUHFA8 mReader -> r
-    void addTab(int) -> A
-    float div(float,float,int) -> B
-    void exportData() -> C
-    java.lang.CharSequence getTabTitle(int) -> D
-    void getUHFTemperature() -> E
-    void getUHFVersion() -> F
-    void initTabs() -> G
-    void initUHF() -> H
-    void initViewPager() -> I
-    void onTabReselected(android.app.ActionBar$Tab) -> J
-    void onTabSelected(android.app.ActionBar$Tab) -> K
-    void scheduleExportData() -> L
-    void sleepTime(long) -> M
-    void toastMessage(java.lang.String) -> N
+    com.example.uhf.view.NoScrollViewPager mViewPager -> B
+    android.app.ActionBar$TabListener mTabListener -> D
+    com.example.uhf.fragment.UHFReadTagFragment uhfReadTagFragment -> s
+    com.example.uhf.adapter.ViewPagerAdapter mViewPagerAdapter -> C
+    int antPower -> v
+    java.lang.String FILE_PATH -> E
+    boolean access$600(com.example.uhf.activity.BaseTabFragmentActivity) -> A
+    boolean access$602(com.example.uhf.activity.BaseTabFragmentActivity,boolean) -> B
+    int access$700(com.example.uhf.activity.BaseTabFragmentActivity) -> C
+    void addTab(int) -> D
+    float div(float,float,int) -> E
+    void exportData() -> F
+    java.lang.CharSequence getTabTitle(int) -> G
+    void getUHFTemperature() -> H
+    void getUHFVersion() -> I
+    void initTabs() -> J
+    void initUHF() -> K
+    void initViewPager() -> L
+    void onTabReselected(android.app.ActionBar$Tab) -> M
+    void onTabSelected(android.app.ActionBar$Tab) -> N
+    void scheduleExportData() -> O
+    void scheduleTimestampJob() -> P
+    void sleepTime(long) -> Q
+    void toastMessage(java.lang.String) -> R
+    void writeTimestamp() -> S
     void access$000(com.example.uhf.activity.BaseTabFragmentActivity) -> u
     void access$100(com.example.uhf.activity.BaseTabFragmentActivity) -> v
-    float access$200(com.example.uhf.activity.BaseTabFragmentActivity,float,float,int) -> w
-    void access$300(com.example.uhf.activity.BaseTabFragmentActivity,long) -> x
-    boolean access$400(com.example.uhf.activity.BaseTabFragmentActivity) -> y
-    boolean access$402(com.example.uhf.activity.BaseTabFragmentActivity,boolean) -> z
+    void access$200(com.example.uhf.activity.BaseTabFragmentActivity) -> w
+    void access$300(com.example.uhf.activity.BaseTabFragmentActivity) -> x
+    float access$400(com.example.uhf.activity.BaseTabFragmentActivity,float,float,int) -> y
+    void access$500(com.example.uhf.activity.BaseTabFragmentActivity,long) -> z
 com.example.uhf.activity.BaseTabFragmentActivity$1 -> com.example.uhf.activity.a$a:
     com.example.uhf.activity.BaseTabFragmentActivity this$0 -> b
 com.example.uhf.activity.BaseTabFragmentActivity$2 -> com.example.uhf.activity.a$b:
+    com.example.uhf.activity.BaseTabFragmentActivity this$0 -> b
+com.example.uhf.activity.BaseTabFragmentActivity$3 -> com.example.uhf.activity.a$c:
     com.example.uhf.activity.BaseTabFragmentActivity this$0 -> a
-com.example.uhf.activity.BaseTabFragmentActivity$ExcelTask -> com.example.uhf.activity.a$c:
+com.example.uhf.activity.BaseTabFragmentActivity$ExcelTask -> com.example.uhf.activity.a$d:
     android.app.ProgressDialog mypDialog -> a
     com.example.uhf.activity.BaseTabFragmentActivity this$0 -> f
     boolean isSotp -> c
@@ -8993,22 +9003,22 @@ com.example.uhf.activity.BaseTabFragmentActivity$ExcelTask -> com.example.uhf.ac
     void notifySystemToScan(java.io.File) -> b
     void onPostExecute(java.lang.Boolean) -> c
     void onProgressUpdate(java.lang.Integer[]) -> d
-com.example.uhf.activity.BaseTabFragmentActivity$ExcelTask$1 -> com.example.uhf.activity.a$c$a:
+com.example.uhf.activity.BaseTabFragmentActivity$ExcelTask$1 -> com.example.uhf.activity.a$d$a:
     com.example.uhf.activity.BaseTabFragmentActivity$ExcelTask this$1 -> b
-com.example.uhf.activity.BaseTabFragmentActivity$InitTask -> com.example.uhf.activity.a$d:
+com.example.uhf.activity.BaseTabFragmentActivity$InitTask -> com.example.uhf.activity.a$e:
     android.app.ProgressDialog mypDialog -> a
     com.example.uhf.activity.BaseTabFragmentActivity this$0 -> b
     java.lang.Boolean doInBackground(java.lang.String[]) -> a
     void onPostExecute(java.lang.Boolean) -> b
 com.example.uhf.activity.UHFMainActivity -> com.example.uhf.activity.UHFMainActivity:
-    boolean isBuzzer -> C
-    void checkReadWritePermission() -> O
-    void free() -> P
-    void initViewPageData2() -> Q
-    void led() -> R
-    void playSound() -> S
-    void playSound(int) -> T
-    boolean vailHexInput(java.lang.String) -> U
+    boolean isBuzzer -> F
+    void checkReadWritePermission() -> T
+    void free() -> U
+    void initViewPageData2() -> V
+    void led() -> W
+    void playSound() -> X
+    void playSound(int) -> Y
+    boolean vailHexInput(java.lang.String) -> Z
 com.example.uhf.activity.UsbDeviceCallback -> com.example.uhf.activity.b:
     void onUsbDeviceConnected(java.lang.String) -> a
     void onUsbDeviceDisconnected(java.lang.String) -> b
@@ -9049,7 +9059,6 @@ com.example.uhf.fragment.GPIOFragment -> c.b.a.b.a:
     void onCreate(android.os.Bundle) -> b0
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
 com.example.uhf.fragment.KeyDownFragment -> c.b.a.b.b:
-    void myOnKeyDwon() -> p1
 com.example.uhf.fragment.UHFKillFragment -> c.b.a.b.c:
     android.widget.RadioButton rbUser_filter -> i0
     android.widget.RadioButton rbTID_filter -> h0
@@ -9064,10 +9073,10 @@ com.example.uhf.fragment.UHFKillFragment -> c.b.a.b.c:
     android.widget.Button btnKill -> a0
     void onActivityCreated(android.os.Bundle) -> V
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
-    void access$000(com.example.uhf.fragment.UHFKillFragment,android.widget.CompoundButton) -> q1
-    com.example.uhf.activity.UHFMainActivity access$100(com.example.uhf.fragment.UHFKillFragment) -> r1
-    void inits(android.view.View) -> s1
-    void onFilterCheck(android.widget.CompoundButton) -> t1
+    void access$000(com.example.uhf.fragment.UHFKillFragment,android.widget.CompoundButton) -> p1
+    com.example.uhf.activity.UHFMainActivity access$100(com.example.uhf.fragment.UHFKillFragment) -> q1
+    void inits(android.view.View) -> r1
+    void onFilterCheck(android.widget.CompoundButton) -> s1
 com.example.uhf.fragment.UHFKillFragment$1 -> c.b.a.b.c$a:
     com.example.uhf.fragment.UHFKillFragment this$0 -> a
 com.example.uhf.fragment.UHFKillFragment$CustomTextWatcher -> c.b.a.b.c$b:
@@ -9091,8 +9100,8 @@ com.example.uhf.fragment.UHFLockFragment -> c.b.a.b.d:
     android.widget.Button btnLock -> a0
     void onActivityCreated(android.os.Bundle) -> V
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
-    com.example.uhf.activity.UHFMainActivity access$000(com.example.uhf.fragment.UHFLockFragment) -> q1
-    java.lang.String binaryString2hexString(java.lang.String) -> r1
+    com.example.uhf.activity.UHFMainActivity access$000(com.example.uhf.fragment.UHFLockFragment) -> p1
+    java.lang.String binaryString2hexString(java.lang.String) -> q1
 com.example.uhf.fragment.UHFLockFragment$1 -> c.b.a.b.d$a:
     com.example.uhf.fragment.UHFLockFragment this$0 -> a
 com.example.uhf.fragment.UHFLockFragment$2 -> c.b.a.b.d$b:
@@ -9123,9 +9132,8 @@ com.example.uhf.fragment.UHFReadFragment -> c.b.a.b.e:
     android.widget.CheckBox cb_filter -> h0
     void onActivityCreated(android.os.Bundle) -> V
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
-    void myOnKeyDwon() -> p1
-    com.example.uhf.activity.UHFMainActivity access$000(com.example.uhf.fragment.UHFReadFragment) -> q1
-    void read() -> r1
+    com.example.uhf.activity.UHFMainActivity access$000(com.example.uhf.fragment.UHFReadFragment) -> p1
+    void read() -> q1
 com.example.uhf.fragment.UHFReadFragment$1 -> c.b.a.b.e$a:
     com.example.uhf.fragment.UHFReadFragment this$0 -> a
 com.example.uhf.fragment.UHFReadFragment$2 -> c.b.a.b.e$b:
@@ -9160,33 +9168,32 @@ com.example.uhf.fragment.UHFReadTagFragment -> c.b.a.b.f:
     android.widget.TextView tv_totalNum -> e0
     android.widget.ListView LvTags -> l0
     android.widget.TextView tv_count -> d0
-    boolean access$802(com.example.uhf.fragment.UHFReadTagFragment,boolean) -> A1
-    void access$900(com.example.uhf.fragment.UHFReadTagFragment,boolean) -> B1
-    void addDataToList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> C1
-    void clearData() -> D1
-    void initFilter(android.view.View) -> E1
-    void inits(android.view.View) -> F1
-    java.lang.String mergeTidEpc(java.lang.String,java.lang.String,java.lang.String) -> G1
-    void readTag() -> H1
-    void setTotalTime() -> I1
-    void setViewEnabled(boolean) -> J1
-    void stopInventory() -> K1
+    void access$900(com.example.uhf.fragment.UHFReadTagFragment,boolean) -> A1
+    void addDataToList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> B1
+    void clearData() -> C1
+    void initFilter(android.view.View) -> D1
+    void inits(android.view.View) -> E1
+    java.lang.String mergeTidEpc(java.lang.String,java.lang.String,java.lang.String) -> F1
+    void readTag() -> G1
+    void setTotalTime() -> H1
+    void setViewEnabled(boolean) -> I1
+    void stopInventory() -> J1
     void onActivityCreated(android.os.Bundle) -> V
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
     void setUserVisibleHint(boolean) -> n1
-    void myOnKeyDwon() -> p1
-    java.lang.String access$000(com.example.uhf.fragment.UHFReadTagFragment,java.lang.String,java.lang.String,java.lang.String) -> q1
+    java.lang.String access$000(com.example.uhf.fragment.UHFReadTagFragment,java.lang.String,java.lang.String,java.lang.String) -> p1
+    void access$100(com.example.uhf.fragment.UHFReadTagFragment,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> q1
     void onPause() -> r0
-    void access$100(com.example.uhf.fragment.UHFReadTagFragment,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> r1
-    android.os.Handler access$1000(com.example.uhf.fragment.UHFReadTagFragment) -> s1
-    com.example.uhf.activity.UHFMainActivity access$200(com.example.uhf.fragment.UHFReadTagFragment) -> t1
-    void access$300(com.example.uhf.fragment.UHFReadTagFragment) -> u1
-    android.view.ViewGroup access$400(com.example.uhf.fragment.UHFReadTagFragment) -> v1
+    android.os.Handler access$1000(com.example.uhf.fragment.UHFReadTagFragment) -> r1
+    com.example.uhf.activity.UHFMainActivity access$200(com.example.uhf.fragment.UHFReadTagFragment) -> s1
+    void access$300(com.example.uhf.fragment.UHFReadTagFragment) -> t1
+    android.view.ViewGroup access$400(com.example.uhf.fragment.UHFReadTagFragment) -> u1
+    android.widget.CheckBox access$500(com.example.uhf.fragment.UHFReadTagFragment) -> v1
     void onResume() -> w0
-    android.widget.CheckBox access$500(com.example.uhf.fragment.UHFReadTagFragment) -> w1
-    void access$600(com.example.uhf.fragment.UHFReadTagFragment) -> x1
-    int access$702(com.example.uhf.fragment.UHFReadTagFragment,int) -> y1
-    boolean access$800(com.example.uhf.fragment.UHFReadTagFragment) -> z1
+    void access$600(com.example.uhf.fragment.UHFReadTagFragment) -> w1
+    int access$702(com.example.uhf.fragment.UHFReadTagFragment,int) -> x1
+    boolean access$800(com.example.uhf.fragment.UHFReadTagFragment) -> y1
+    boolean access$802(com.example.uhf.fragment.UHFReadTagFragment,boolean) -> z1
 com.example.uhf.fragment.UHFReadTagFragment$1 -> c.b.a.b.f$a:
     com.example.uhf.fragment.UHFReadTagFragment this$0 -> a
 com.example.uhf.fragment.UHFReadTagFragment$2 -> c.b.a.b.f$b:
@@ -9283,59 +9290,59 @@ com.example.uhf.fragment.UHFSetFragment -> c.b.a.b.g:
     android.widget.CheckBox cbBuzzer -> H0
     android.widget.Button btnInputStatus -> N0
     android.widget.CheckBox cbAnt8 -> F0
-    android.widget.Spinner access$1700(com.example.uhf.fragment.UHFSetFragment) -> A1
-    android.widget.Spinner access$1800(com.example.uhf.fragment.UHFSetFragment) -> B1
-    android.widget.Spinner access$1900(com.example.uhf.fragment.UHFSetFragment) -> C1
-    android.widget.EditText access$200(com.example.uhf.fragment.UHFSetFragment) -> D1
-    android.widget.Spinner access$2000(com.example.uhf.fragment.UHFSetFragment) -> E1
-    android.widget.Spinner access$2100(com.example.uhf.fragment.UHFSetFragment) -> F1
-    android.widget.Spinner access$2200(com.example.uhf.fragment.UHFSetFragment) -> G1
-    android.widget.CheckBox access$2300(com.example.uhf.fragment.UHFSetFragment) -> H1
-    void access$2500(com.example.uhf.fragment.UHFSetFragment,int,boolean) -> I1
-    android.widget.CheckBox access$2600(com.example.uhf.fragment.UHFSetFragment) -> J1
-    void access$2700(com.example.uhf.fragment.UHFSetFragment,boolean) -> K1
-    android.widget.EditText access$300(com.example.uhf.fragment.UHFSetFragment) -> L1
-    int access$3000(com.example.uhf.fragment.UHFSetFragment,java.lang.String) -> M1
-    android.widget.CheckBox access$3100(com.example.uhf.fragment.UHFSetFragment) -> N1
-    android.widget.CheckBox access$3200(com.example.uhf.fragment.UHFSetFragment) -> O1
-    android.widget.CheckBox access$3300(com.example.uhf.fragment.UHFSetFragment) -> P1
-    java.lang.String access$400(com.example.uhf.fragment.UHFSetFragment) -> Q1
-    android.widget.Spinner access$500(com.example.uhf.fragment.UHFSetFragment) -> R1
-    android.widget.CheckBox access$600(com.example.uhf.fragment.UHFSetFragment) -> S1
-    android.widget.CheckBox access$700(com.example.uhf.fragment.UHFSetFragment) -> T1
-    android.widget.CheckBox access$800(com.example.uhf.fragment.UHFSetFragment) -> U1
+    android.widget.Spinner access$1800(com.example.uhf.fragment.UHFSetFragment) -> A1
+    android.widget.Spinner access$1900(com.example.uhf.fragment.UHFSetFragment) -> B1
+    android.widget.EditText access$200(com.example.uhf.fragment.UHFSetFragment) -> C1
+    android.widget.Spinner access$2000(com.example.uhf.fragment.UHFSetFragment) -> D1
+    android.widget.Spinner access$2100(com.example.uhf.fragment.UHFSetFragment) -> E1
+    android.widget.Spinner access$2200(com.example.uhf.fragment.UHFSetFragment) -> F1
+    android.widget.CheckBox access$2300(com.example.uhf.fragment.UHFSetFragment) -> G1
+    void access$2500(com.example.uhf.fragment.UHFSetFragment,int,boolean) -> H1
+    android.widget.CheckBox access$2600(com.example.uhf.fragment.UHFSetFragment) -> I1
+    void access$2700(com.example.uhf.fragment.UHFSetFragment,boolean) -> J1
+    android.widget.EditText access$300(com.example.uhf.fragment.UHFSetFragment) -> K1
+    int access$3000(com.example.uhf.fragment.UHFSetFragment,java.lang.String) -> L1
+    android.widget.CheckBox access$3100(com.example.uhf.fragment.UHFSetFragment) -> M1
+    android.widget.CheckBox access$3200(com.example.uhf.fragment.UHFSetFragment) -> N1
+    android.widget.CheckBox access$3300(com.example.uhf.fragment.UHFSetFragment) -> O1
+    java.lang.String access$400(com.example.uhf.fragment.UHFSetFragment) -> P1
+    android.widget.Spinner access$500(com.example.uhf.fragment.UHFSetFragment) -> Q1
+    android.widget.CheckBox access$600(com.example.uhf.fragment.UHFSetFragment) -> R1
+    android.widget.CheckBox access$700(com.example.uhf.fragment.UHFSetFragment) -> S1
+    android.widget.CheckBox access$800(com.example.uhf.fragment.UHFSetFragment) -> T1
+    android.widget.CheckBox access$900(com.example.uhf.fragment.UHFSetFragment) -> U1
     void onActivityCreated(android.os.Bundle) -> V
-    android.widget.CheckBox access$900(com.example.uhf.fragment.UHFSetFragment) -> V1
-    void getAnt(boolean) -> W1
-    void getCW(boolean) -> X1
-    void getFre(boolean) -> Y1
-    void getLinkParams(boolean) -> Z1
-    int getMode(java.lang.String) -> a2
-    int getModeIndex(int) -> b2
-    int getModeIndex(java.lang.String) -> c2
-    java.lang.String getModeName(int) -> d2
-    void getPwm(boolean) -> e2
+    void getAnt(boolean) -> V1
+    void getCW(boolean) -> W1
+    void getFre(boolean) -> X1
+    void getLinkParams(boolean) -> Y1
+    int getMode(java.lang.String) -> Z1
+    int getModeIndex(int) -> a2
+    int getModeIndex(java.lang.String) -> b2
+    java.lang.String getModeName(int) -> c2
+    void getPwm(boolean) -> d2
+    boolean getSession() -> e2
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
-    boolean getSession() -> f2
-    void initA8Views(android.view.View) -> g2
-    void inits(android.view.View) -> h2
-    void onClick_rbBRA(android.view.View) -> i2
-    void sendMsg(int,java.lang.Object,int) -> j2
-    void setCW(int,boolean) -> k2
-    boolean setFreHop(float) -> l2
-    void setSession() -> m2
-    void updateFreHop(int) -> n2
-    void GetPower(boolean) -> q1
-    android.widget.Spinner access$000(com.example.uhf.fragment.UHFSetFragment) -> r1
-    com.example.uhf.activity.UHFMainActivity access$100(com.example.uhf.fragment.UHFSetFragment) -> s1
-    android.widget.CheckBox access$1000(com.example.uhf.fragment.UHFSetFragment) -> t1
-    android.widget.CheckBox access$1100(com.example.uhf.fragment.UHFSetFragment) -> u1
-    android.widget.CheckBox access$1200(com.example.uhf.fragment.UHFSetFragment) -> v1
+    void initA8Views(android.view.View) -> f2
+    void inits(android.view.View) -> g2
+    void onClick_rbBRA(android.view.View) -> h2
+    void sendMsg(int,java.lang.Object,int) -> i2
+    void setCW(int,boolean) -> j2
+    boolean setFreHop(float) -> k2
+    void setSession() -> l2
+    void updateFreHop(int) -> m2
+    void GetPower(boolean) -> p1
+    android.widget.Spinner access$000(com.example.uhf.fragment.UHFSetFragment) -> q1
+    com.example.uhf.activity.UHFMainActivity access$100(com.example.uhf.fragment.UHFSetFragment) -> r1
+    android.widget.CheckBox access$1000(com.example.uhf.fragment.UHFSetFragment) -> s1
+    android.widget.CheckBox access$1100(com.example.uhf.fragment.UHFSetFragment) -> t1
+    android.widget.CheckBox access$1200(com.example.uhf.fragment.UHFSetFragment) -> u1
+    android.widget.CheckBox access$1300(com.example.uhf.fragment.UHFSetFragment) -> v1
     void onResume() -> w0
-    android.widget.CheckBox access$1300(com.example.uhf.fragment.UHFSetFragment) -> w1
-    android.widget.Spinner access$1400(com.example.uhf.fragment.UHFSetFragment) -> x1
-    android.widget.Spinner access$1500(com.example.uhf.fragment.UHFSetFragment) -> y1
-    android.widget.Spinner access$1600(com.example.uhf.fragment.UHFSetFragment) -> z1
+    android.widget.Spinner access$1400(com.example.uhf.fragment.UHFSetFragment) -> w1
+    android.widget.Spinner access$1500(com.example.uhf.fragment.UHFSetFragment) -> x1
+    android.widget.Spinner access$1600(com.example.uhf.fragment.UHFSetFragment) -> y1
+    android.widget.Spinner access$1700(com.example.uhf.fragment.UHFSetFragment) -> z1
 com.example.uhf.fragment.UHFSetFragment$1 -> c.b.a.b.g$a:
     com.example.uhf.fragment.UHFSetFragment this$0 -> a
 com.example.uhf.fragment.UHFSetFragment$2 -> c.b.a.b.g$b:
@@ -9373,12 +9380,12 @@ com.example.uhf.fragment.UHFUpgradeFragment -> c.b.a.b.h:
     void onCreate(android.os.Bundle) -> b0
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
     void onDestroyView() -> i0
-    android.widget.EditText access$000(com.example.uhf.fragment.UHFUpgradeFragment) -> q1
-    android.widget.TextView access$100(com.example.uhf.fragment.UHFUpgradeFragment) -> r1
-    java.lang.String access$300(com.example.uhf.fragment.UHFUpgradeFragment) -> s1
-    java.lang.String access$302(com.example.uhf.fragment.UHFUpgradeFragment,java.lang.String) -> t1
-    com.example.uhf.activity.UHFMainActivity access$400(com.example.uhf.fragment.UHFUpgradeFragment) -> u1
-    void init(android.view.View) -> v1
+    android.widget.EditText access$000(com.example.uhf.fragment.UHFUpgradeFragment) -> p1
+    android.widget.TextView access$100(com.example.uhf.fragment.UHFUpgradeFragment) -> q1
+    java.lang.String access$300(com.example.uhf.fragment.UHFUpgradeFragment) -> r1
+    java.lang.String access$302(com.example.uhf.fragment.UHFUpgradeFragment,java.lang.String) -> s1
+    com.example.uhf.activity.UHFMainActivity access$400(com.example.uhf.fragment.UHFUpgradeFragment) -> t1
+    void init(android.view.View) -> u1
 com.example.uhf.fragment.UHFUpgradeFragment$1 -> c.b.a.b.h$a:
     com.example.uhf.fragment.UHFUpgradeFragment this$0 -> b
 com.example.uhf.fragment.UHFUpgradeFragment$2 -> c.b.a.b.h$b:
@@ -9411,8 +9418,8 @@ com.example.uhf.fragment.UHFWriteFragment -> c.b.a.b.i:
     android.widget.CheckBox cb_filter_wt -> g0
     void onActivityCreated(android.os.Bundle) -> V
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> f0
-    com.example.uhf.activity.UHFMainActivity access$000(com.example.uhf.fragment.UHFWriteFragment) -> q1
-    void write() -> r1
+    com.example.uhf.activity.UHFMainActivity access$000(com.example.uhf.fragment.UHFWriteFragment) -> p1
+    void write() -> q1
 com.example.uhf.fragment.UHFWriteFragment$1 -> c.b.a.b.i$a:
     com.example.uhf.fragment.UHFWriteFragment this$0 -> a
 com.example.uhf.fragment.UHFWriteFragment$2 -> c.b.a.b.i$b:

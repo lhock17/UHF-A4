@@ -82,25 +82,29 @@
 46        <activity android:name="com.example.uhf.filebrowser.FileManagerActivity" />
 46-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:33:10-69
 46-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:33:20-67
-47        <!-- <service android:name=".service.TcpService"/> -->
-48        <receiver
-48-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:35:9-43:20
-49            android:name="com.example.uhf.activity.UsbReceiver"
-49-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:36:13-49
-50            android:enabled="true"
-50-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:37:13-35
-51            android:exported="true" >
-51-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:38:13-36
-52            <intent-filter>
-52-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:39:13-42:29
-53                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-53-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:40:17-90
-53-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:40:25-87
-54                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
-54-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:41:17-90
-54-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:41:25-87
-55            </intent-filter>
-56        </receiver>
-57    </application>
-58
-59</manifest>
+47
+48        <service android:name="com.example.uhf.service.TcpService" />
+48-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:34:9-54
+48-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:34:18-52
+49
+50        <receiver
+50-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:35:9-43:20
+51            android:name="com.example.uhf.activity.UsbReceiver"
+51-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:36:13-49
+52            android:enabled="true"
+52-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:37:13-35
+53            android:exported="true" >
+53-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:38:13-36
+54            <intent-filter>
+54-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:39:13-42:29
+55                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+55-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:40:17-90
+55-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:40:25-87
+56                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
+56-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:41:17-90
+56-->D:\Documents\GitHub\UHF-A4\app\src\main\AndroidManifest.xml:41:25-87
+57            </intent-filter>
+58        </receiver>
+59    </application>
+60
+61</manifest>

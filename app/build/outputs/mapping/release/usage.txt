@@ -1088,7 +1088,6 @@ com.rscja.team.mtk.scanner.utility.ScannerUtility_mtk
 com.google.android.material.bottomnavigation.BottomNavigationView$1
 androidx.annotation.InspectableProperty
 com.rscja.team.mtk.deviceapi.m$b
-com.example.uhf.service.TcpService
 androidx.appcompat.widget.DecorToolbar:
     public abstract void setTitle(java.lang.CharSequence)
     public abstract java.lang.CharSequence getSubtitle()
@@ -3040,6 +3039,8 @@ androidx.core.provider.FontsContractCompat:
 com.example.uhf.R$drawable
 androidx.core.content.FileProvider$SimplePathStrategy
 com.rscja.custom.UHFTemperatureTagsAPI$MultipleTemperatureInfo
+com.example.uhf.fragment.KeyDownFragment:
+    public void myOnKeyDwon()
 com.lidroid.xutils.bitmap.download.DefaultDownloader
 com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior:
     public void setAutoHideEnabled(boolean)
@@ -4405,6 +4406,7 @@ com.example.uhf.activity.BaseTabFragmentActivity:
     public java.lang.String GetTimesyyyymmddhhmmss()
     private static final java.lang.String TAG
     private static final long EXPORT_DATA_INTERVAL
+    private static final long TIMESTAMP_INTERVAL
 androidx.core.content.pm.PermissionInfoCompat$Protection
 androidx.legacy.coreui.R$attr
 com.lidroid.xutils.http.client.multipart.HttpMultipartMode
@@ -4746,6 +4748,8 @@ com.example.uhf.filebrowser.FileManagerActivity:
 com.zebra.adc.decoder.BarCodeReader$ErrorCallback
 com.lidroid.xutils.http.callback.StringDownloadHandler
 com.lidroid.xutils.util.core.LruDiskCache$Entry
+com.example.uhf.fragment.UHFReadFragment:
+    public void myOnKeyDwon()
 androidx.appcompat.widget.ActivityChooserModel$OnChooseActivityListener
 com.lidroid.xutils.db.table.KeyValue
 androidx.core.hardware.fingerprint.FingerprintManagerCompat$CryptoObject
@@ -7497,6 +7501,7 @@ com.example.uhf.fragment.UHFReadTagFragment:
     static int binarySearch(java.util.List,java.lang.String)
     static boolean compareString(java.lang.String,java.lang.String)
     public int checkIsExist(java.lang.String)
+    public void myOnKeyDwon()
     public static final java.lang.String TAG_EPCAndTidUser
     public static final java.lang.String TAG_EPC
     public static final java.lang.String TAG_TID
