@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Documents\\GitHub\\UHF-A4\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "D:\\Documents\\GitHub\\UHF-A4\\Scanner\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\429fb715fcc7711d4ab133e350b6f531\\core-1.3.0\\res\\values-pt-rBR\\values-pt-rBR.xml",

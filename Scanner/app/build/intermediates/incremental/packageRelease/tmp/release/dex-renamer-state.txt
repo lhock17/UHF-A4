@@ -1,4 +1,4 @@
-#Wed Feb 07 18:17:22 AEST 2024
-base.0=D\:\\Documents\\GitHub\\UHF-A4\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+#Sat Feb 10 12:21:09 AEST 2024
+base.0=D\:\\Documents\\GitHub\\UHF-A4\\Scanner\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
