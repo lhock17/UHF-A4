@@ -351,16 +351,17 @@ public class UHFReadTagFragment extends KeyDownFragment {
         }
     }
 
-    private void clearData() {
+    public void clearData() {
         try {
         totalNum = 0;
         tv_count.setText("0");
         tv_totalNum.setText("0");
         tv_time.setText("0s");
 
-            tagList.clear();
-            tempDatas.clear();
-            adapter.notifyDataSetChanged();
+        tagList.clear();
+        tempDatas.clear();
+        lastScans.clear();
+        adapter.notifyDataSetChanged();
         } catch (Exception e) {}
     }
 

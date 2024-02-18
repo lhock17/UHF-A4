@@ -283,7 +283,8 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 //            excelUtils.writeToExcel(list);
             excelUtils.writeToCSV(list);
             notifySystemToScan(file);
-            uhfReadTagFragment.tagList.clear();
+            // Fully reset the state of UHFReadTagFragment so we don't leak.
+            uhfReadTagFragment.clearData();
             long waitTime = 20000 - (System.currentTimeMillis() - begin);
             sleepTime(waitTime);
             return true;
