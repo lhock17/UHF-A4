@@ -42,66 +42,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
-    private String TAG = "UHFSetFragment";
-    private UHFMainActivity mContext;
-
-    private Button btnSetFre;
-    private Button btnGetFre;
-    private Spinner spMode;
-
-    private LinearLayout ll_freHop;
-
-
-    private Spinner spPower;
-
-    private EditText et_worktime;
-    private EditText et_waittime;
-    private Button btnWorkWait;
-
-    private Spinner spFreHop; //频点列表
-    private Button btnSetFreHop; //设置频点设置
-
-    private Button btnGetWait; //获取空占比
-    private Button btnSetAgreement; //设置协议
-    private Spinner SpinnerAgreement; //协议列表
-
-    private Button btnSetLinkParams; //设置链路参数
-    private Button btnGetLinkParams; //获取链路参数
-    private Spinner splinkParams; //链路参数列表
-
-
-    private CheckBox cbTagFocus; //打开tagFocus
-    private CheckBox cbFastID; //打开FastID
-    private CheckBox cbEPC_TID; //打开EPC+TID
-    private CheckBox cbAntAll;
-
-    private RadioButton rb_Brazil; // 巴西频点
-    private RadioButton rb_America; // 美国频点
-    private RadioButton rb_Others; //其他频点
-    private ArrayAdapter adapter; //频点列表适配器
-
-    private DisplayMetrics metrics;
-    private AlertDialog dialog;
-
-    private Button btSetAnt, btGetAnt;
-    private CheckBox cbAnt1, cbAnt2, cbAnt3, cbAnt4, cbAnt5, cbAnt6, cbAnt7, cbAnt8;
-
-    private CheckBox cbContinuousWave, cbBuzzer;
-
-    private String[] arrayMode;
-
-    private Button btnOutput3On, btnOutput3Off, btnOutput4On, btnOutput4Off, btnInputStatus;
-
-    private Button btnSetPower;
-    private Button btnGetPower;
-
-    private LinearLayout ll_a8,ll_antA8;
-
-    private Spinner spPower1, spPower2, spPower3, spPower4, spPower5, spPower6, spPower7, spPower8;
-
-    Spinner spSessionID, spInventoried, SpinnerANT;
-    EditText etAntWorkTime;
-    Button btnSetSession, btnGetSession;
     private static final int GET_FRE = 1;
     private static final int GET_PWM = 2;
     private static final int GET_LINK_PARAMS = 3;
@@ -109,6 +49,46 @@ public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
     private static final int GET_POWER = 5;
     private static final int GET_VERSION = 6;
     private static final int GET_CW = 7;
+    Spinner spSessionID, spInventoried, SpinnerANT;
+    EditText etAntWorkTime;
+    Button btnSetSession, btnGetSession;
+    private String TAG = "UHFSetFragment";
+    private UHFMainActivity mContext;
+    private Button btnSetFre;
+    private Button btnGetFre;
+    private Spinner spMode;
+    private LinearLayout ll_freHop;
+    private Spinner spPower;
+    private EditText et_worktime;
+    private EditText et_waittime;
+    private Button btnWorkWait;
+    private Spinner spFreHop; //频点列表
+    private Button btnSetFreHop; //设置频点设置
+    private Button btnGetWait; //获取空占比
+    private Button btnSetAgreement; //设置协议
+    private Spinner SpinnerAgreement; //协议列表
+    private Button btnSetLinkParams; //设置链路参数
+    private Button btnGetLinkParams; //获取链路参数
+    private Spinner splinkParams; //链路参数列表
+    private CheckBox cbTagFocus; //打开tagFocus
+    private CheckBox cbFastID; //打开FastID
+    private CheckBox cbEPC_TID; //打开EPC+TID
+    private CheckBox cbAntAll;
+    private RadioButton rb_Brazil; // 巴西频点
+    private RadioButton rb_America; // 美国频点
+    private RadioButton rb_Others; //其他频点
+    private ArrayAdapter adapter; //频点列表适配器
+    private DisplayMetrics metrics;
+    private AlertDialog dialog;
+    private Button btSetAnt, btGetAnt;
+    private CheckBox cbAnt1, cbAnt2, cbAnt3, cbAnt4, cbAnt5, cbAnt6, cbAnt7, cbAnt8;
+    private CheckBox cbContinuousWave, cbBuzzer;
+    private String[] arrayMode;
+    private Button btnOutput3On, btnOutput3Off, btnOutput4On, btnOutput4Off, btnInputStatus;
+    private Button btnSetPower;
+    private Button btnGetPower;
+    private LinearLayout ll_a8, ll_antA8;
+    private Spinner spPower1, spPower2, spPower3, spPower4, spPower5, spPower6, spPower7, spPower8;
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -450,7 +430,6 @@ public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
 //            public void run() {
 //                getVersion();
         getFre(false);
-        getPwm(false);
 //                getLinkParams(false);
         getAnt(false);
         getCW(false);
@@ -473,40 +452,18 @@ public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
         cbBuzzer.setChecked(mContext.isBuzzer);
     }
 
-    /**
-     * 工作模式下拉列表点击选中item监听
-     */
-    public class MyOnTouchListener implements AdapterView.OnItemSelectedListener {
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            if (spMode.getSelectedItem().toString().equals(getString(R.string.United_States_Standard))) {
-                ll_freHop.setVisibility(View.VISIBLE);
-                rb_America.setChecked(true); //默认美国频点
-            } else {
-                ll_freHop.setVisibility(View.GONE);
-            }
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-
-        }
+    public void getFre(boolean isToast) {
+        int idx = mContext.mReader.getFrequencyMode();
+        idx = getModeIndex(idx);
+        Message msg = mHandler.obtainMessage(GET_FRE, idx);
+        msg.arg1 = isToast ? 1 : 0;
+        mHandler.sendMessage(msg);
     }
 
-    public class SetFreOnclickListener implements OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            String modeName = spMode.getSelectedItem().toString();
-            int mode = getMode(modeName);
-            if (mContext.mReader.setFrequencyMode((byte) mode)) {
-                UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_frequency_succ);
-            } else {
-                UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_frequency_fail);
-//                mContext.playSound(2);
-            }
-        }
+    public void GetPower(boolean showToast) {
+        List<AntennaPowerEntity> powerList = mContext.mReader.getAntennaPower();
+        sendMsg(GET_POWER, powerList, showToast ? 1 : 0);
+        Log.i(TAG, "OnClick_GetPower() iPower=" + powerList);
     }
 
 //    private void getVersion() {
@@ -520,28 +477,6 @@ public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
 //        mHandler.sendMessage(msg);
 //    }
 
-    public void getFre(boolean isToast) {
-        int idx = mContext.mReader.getFrequencyMode();
-        idx = getModeIndex(idx);
-        Message msg = mHandler.obtainMessage(GET_FRE, idx);
-        msg.arg1 = isToast ? 1 : 0;
-        mHandler.sendMessage(msg);
-    }
-
-    public void getPwm(boolean showToast) {
-        int[] pwm = mContext.mReader.getPwm();
-        Message msg = mHandler.obtainMessage(GET_PWM, pwm);
-        msg.arg1 = showToast ? 1 : 0;
-        mHandler.sendMessage(msg);
-    }
-
-    public void GetPower(boolean showToast) {
-        List<AntennaPowerEntity> powerList = mContext.mReader.getAntennaPower();
-        sendMsg(GET_POWER, powerList, showToast ? 1 : 0);
-        Log.i(TAG, "OnClick_GetPower() iPower=" + powerList);
-    }
-
-
     /**
      * 获取链路参数
      */
@@ -550,80 +485,6 @@ public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
         Message msg = mHandler.obtainMessage(GET_LINK_PARAMS, idx);
         msg.arg1 = isToast ? 1 : 0;
         mHandler.sendMessage(msg);
-    }
-
-    public class SetPWMOnclickListener implements OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            if (mContext.mReader.setPwm(StringUtility.string2Int(et_worktime.getText().toString(), 0),
-                    StringUtility.string2Int(et_waittime.getText().toString(), 0))) {
-                UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_pwm_succ);
-            } else {
-                UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_pwm_fail);
-//                mContext.playSound(2);
-            }
-        }
-    }
-
-    public class GetFreOnclickListener implements OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            getFre(true);
-        }
-    }
-
-    public class OnMyCheckedChangedListener implements CompoundButton.OnCheckedChangeListener {
-
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            switch (buttonView.getId()) {
-                case R.id.cbTagFocus:
-                    if (mContext.mReader.setTagFocus(isChecked)) {
-                        if (isChecked) {
-                            cbTagFocus.setText(R.string.tagFocus_off);
-                        } else {
-                            cbTagFocus.setText(R.string.tagFocus);
-                        }
-                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
-                    } else {
-                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
-//                        mContext.playSound(2);
-                    }
-                    break;
-                case R.id.cbFastID:
-                    if (mContext.mReader.setFastID(isChecked)) {
-                        if (isChecked) {
-                            cbFastID.setText(R.string.fastID_off);
-                        } else {
-                            cbFastID.setText(R.string.fastID);
-                        }
-                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
-                    } else {
-                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
-//                        mContext.playSound(2);
-                    }
-                    break;
-                case R.id.cbEPC_TID:
-                    if (isChecked) {
-                        cbEPC_TID.setText(R.string.EPC_TID_off);
-                        if (mContext.mReader.setEPCAndTIDMode()) {
-                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
-                        } else {
-                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
-                        }
-                    } else {
-                        cbEPC_TID.setText(R.string.EPC_TID);
-                        if (mContext.mReader.setEPCMode()) {
-                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
-                        } else {
-                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
-                        }
-                    }
-                    break;
-            }
-        }
     }
 
     /**
@@ -656,7 +517,7 @@ public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
                 }
                 break;
             case R.id.btnGetWait: //获取空占比
-                getPwm(true);
+                UIHelper.ToastMessage(mContext, R.string.uhf_msg_read_pwm_fail);
                 break;
             case R.id.btnSetAgreement: //设置协议
                 if (mContext.mReader.setProtocol(SpinnerAgreement.getSelectedItemPosition())) {
@@ -925,6 +786,111 @@ public class UHFSetFragment extends KeyDownFragment implements OnClickListener {
             }
         } else {
             UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
+        }
+    }
+
+    /**
+     * 工作模式下拉列表点击选中item监听
+     */
+    public class MyOnTouchListener implements AdapterView.OnItemSelectedListener {
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            if (spMode.getSelectedItem().toString().equals(getString(R.string.United_States_Standard))) {
+                ll_freHop.setVisibility(View.VISIBLE);
+                rb_America.setChecked(true); //默认美国频点
+            } else {
+                ll_freHop.setVisibility(View.GONE);
+            }
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    }
+
+    public class SetFreOnclickListener implements OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            String modeName = spMode.getSelectedItem().toString();
+            int mode = getMode(modeName);
+            if (mContext.mReader.setFrequencyMode((byte) mode)) {
+                UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_frequency_succ);
+            } else {
+                UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_frequency_fail);
+//                mContext.playSound(2);
+            }
+        }
+    }
+
+    public class SetPWMOnclickListener implements OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_pwm_fail);
+//                mContext.playSound(2);
+        }
+    }
+
+    public class GetFreOnclickListener implements OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            getFre(true);
+        }
+    }
+
+    public class OnMyCheckedChangedListener implements CompoundButton.OnCheckedChangeListener {
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            switch (buttonView.getId()) {
+                case R.id.cbTagFocus:
+                    if (mContext.mReader.setTagFocus(isChecked)) {
+                        if (isChecked) {
+                            cbTagFocus.setText(R.string.tagFocus_off);
+                        } else {
+                            cbTagFocus.setText(R.string.tagFocus);
+                        }
+                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
+                    } else {
+                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
+//                        mContext.playSound(2);
+                    }
+                    break;
+                case R.id.cbFastID:
+                    if (mContext.mReader.setFastID(isChecked)) {
+                        if (isChecked) {
+                            cbFastID.setText(R.string.fastID_off);
+                        } else {
+                            cbFastID.setText(R.string.fastID);
+                        }
+                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
+                    } else {
+                        UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
+//                        mContext.playSound(2);
+                    }
+                    break;
+                case R.id.cbEPC_TID:
+                    if (isChecked) {
+                        cbEPC_TID.setText(R.string.EPC_TID_off);
+                        if (mContext.mReader.setEPCAndTIDMode()) {
+                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
+                        } else {
+                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
+                        }
+                    } else {
+                        cbEPC_TID.setText(R.string.EPC_TID);
+                        if (mContext.mReader.setEPCMode()) {
+                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_succ);
+                        } else {
+                            UIHelper.ToastMessage(mContext, R.string.uhf_msg_set_fail);
+                        }
+                    }
+                    break;
+            }
         }
     }
 
